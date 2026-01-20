@@ -357,6 +357,19 @@
 }
 
 @media (max-width: 900px) {
+  /* Header Mobile */
+  .seminars-page .header .container {
+    padding: 0 16px;
+  }
+
+  .seminars-page .header-content {
+    padding: 8px 0;
+  }
+
+  .seminars-page .logo img {
+    height: 45px;
+  }
+
   .seminars-page .nav {
     display: none;
   }
