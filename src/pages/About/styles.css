@@ -5,7 +5,7 @@
   background-color: var(--white);
 }
 
-/* Header - reuse from Design3 */
+/* Header */
 .about-page .header {
   position: fixed;
   top: 0;
@@ -16,11 +16,22 @@
   z-index: 1000;
 }
 
+.about-page .header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .about-page .header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 0;
+  gap: 20px;
+}
+
+.about-page .logo {
+  flex-shrink: 0;
 }
 
 .about-page .logo img {
@@ -36,7 +47,7 @@
 
 .about-page .nav-list {
   display: flex;
-  gap: 52px;
+  gap: 32px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -44,7 +55,7 @@
 
 .about-page .nav-list li a {
   display: block;
-  padding: 10px 14px;
+  padding: 10px 12px;
   color: #212121;
   font-size: 13px;
   font-weight: 500;
@@ -59,8 +70,26 @@
   background: rgba(76, 175, 80, 0.08);
 }
 
+.about-page .header-actions {
+  flex-shrink: 0;
+}
+
 .about-page .mobile-menu-btn {
   display: none;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: var(--gray-light);
+  border-radius: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-page .mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+  color: #212121;
 }
 
 /* Back Section */
@@ -340,17 +369,54 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .about-page .container {
+    padding: 0 20px;
+  }
+
+  .about-page .nav-list {
+    gap: 24px;
+  }
+}
+
 @media (max-width: 900px) {
+  /* Header Mobile */
+  .about-page .header .container {
+    padding: 0 16px;
+  }
+
+  .about-page .header-content {
+    padding: 8px 0;
+  }
+
+  .about-page .logo img {
+    height: 45px;
+  }
+
   .about-page .nav {
     display: none;
   }
 
   .about-page .mobile-menu-btn {
     display: flex;
+    width: 44px;
+    height: 44px;
+    background: var(--gray-light);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-page .mobile-menu-btn svg {
+    width: 24px;
+    height: 24px;
   }
 
   .about-section-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .about-hero h1 {
@@ -362,6 +428,156 @@
   }
 
   .about-page .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page .header-content {
+    padding: 10px 0;
+  }
+
+  .about-page .logo img {
+    height: 45px;
+  }
+
+  .back-section {
+    padding-top: 80px;
+    padding-bottom: 16px;
+  }
+
+  .back-link {
+    font-size: 14px;
+  }
+
+  .about-hero {
+    padding: 24px 0 40px;
+  }
+
+  .about-hero h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .about-hero-subtitle {
+    font-size: 16px;
+  }
+
+  .about-section {
+    padding: 50px 0;
+  }
+
+  .about-section h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .about-section-content p {
+    font-size: 16px;
+  }
+
+  .placeholder-image {
+    height: 300px;
+  }
+
+  .about-badge {
+    padding: 16px 20px;
+  }
+
+  .badge-year {
+    font-size: 28px;
+  }
+
+  .goals-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .goal-card {
+    padding: 24px;
+  }
+
+  .goal-number {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .goal-card p {
+    font-size: 14px;
+  }
+
+  .registration-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .registration-card {
+    padding: 24px;
+  }
+
+  .registration-card p {
+    font-size: 20px;
+  }
+
+  .about-page .footer {
+    padding: 40px 0 0;
+  }
+
+  .about-page .footer-main {
+    padding-bottom: 32px;
+  }
+
+  .about-page .footer-logo {
+    height: 40px;
+  }
+
+  .about-page .footer-links {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-page .footer-column h4 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .about-page .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-page .container {
+    padding: 0 16px;
+  }
+
+  .about-hero h1 {
+    font-size: 28px;
+  }
+
+  .about-hero-subtitle {
+    font-size: 14px;
+  }
+
+  .about-section h2 {
+    font-size: 24px;
+  }
+
+  .placeholder-image {
+    height: 250px;
+    padding: 20px;
+  }
+
+  .goal-card {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .registration-card {
+    padding: 20px;
   }
 }
