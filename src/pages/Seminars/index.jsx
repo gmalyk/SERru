@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import {
   organizationInfo,
   footerLinks
@@ -102,10 +102,10 @@ function Seminars() {
 
             <nav className="nav">
               <ul className="nav-list">
-                <li><Link to="/about">О Союзе</Link></li>
+                <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>О Союзе</NavLink></li>
                 <li><a href="/#structure">Структура ОМОР</a></li>
                 <li><a href="/#news">Новости</a></li>
-                <li><Link to="/seminars">Семинары</Link></li>
+                <li><NavLink to="/seminars" className={({ isActive }) => isActive ? 'active' : ''}>Семинары</NavLink></li>
                 <li><a href="/#spk">СПК</a></li>
                 <li><a href="/#contacts">Контакты</a></li>
               </ul>

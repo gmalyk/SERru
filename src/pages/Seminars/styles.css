@@ -70,6 +70,22 @@
   background: rgba(76, 175, 80, 0.08);
 }
 
+.seminars-page .nav-list li a.active {
+  color: var(--green-primary);
+  position: relative;
+}
+
+.seminars-page .nav-list li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: var(--green-primary);
+  border-radius: 2px;
+}
+
 .seminars-page .header-actions {
   flex-shrink: 0;
 }

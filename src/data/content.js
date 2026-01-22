@@ -14,9 +14,10 @@ export const organizationInfo = {
 
 export const contactInfo = {
   address: '119334, Москва, ул. Вавилова, д. 24, подъезд 3, офис 618',
-  phone: '+7 495 410 15 21',
+  phone: '+7 (495) 410-15-31',
   email: 'info@omor-eco.ru',
-  telegram: '@soyuzecologov'
+  telegram: '@omoreco',
+  telegramLink: 'https://t.me/omoreco'
 };
 
 export const navigation = [
@@ -126,6 +127,177 @@ export const news = [
   }
 ];
 
+// Events/Webinars data organized by year
+export const events = {
+  2024: [
+    {
+      id: 1,
+      title: 'Экологическая отчётность 2024',
+      date: '15 марта 2024',
+      topics: [
+        'Формы отчётности в Росприроднадзор',
+        'Сроки предоставления отчётов',
+        'Типичные ошибки при заполнении',
+        'Ответственность за нарушения'
+      ],
+      isPast: true
+    },
+    {
+      id: 2,
+      title: 'Обращение с отходами: изменения законодательства',
+      date: '20 мая 2024',
+      topics: [
+        'Новые требования к классификации отходов',
+        'Изменения в лицензировании',
+        'Паспортизация отходов',
+        'Контроль и надзор'
+      ],
+      isPast: true
+    },
+    {
+      id: 3,
+      title: 'РОП 2024: практические аспекты',
+      date: '10 сентября 2024',
+      topics: [
+        'Расчёт нормативов утилизации',
+        'Декларирование упаковки',
+        'Экосбор: порядок расчёта и уплаты'
+      ],
+      isPast: true
+    }
+  ],
+  2025: [
+    {
+      id: 4,
+      title: 'Профессиональные стандарты в экологии',
+      date: '22 февраля 2025',
+      topics: [
+        'Актуальные требования к квалификации',
+        'Процедура независимой оценки',
+        'Подготовка к экзамену НОК'
+      ],
+      isPast: true
+    },
+    {
+      id: 5,
+      title: 'Экологический аудит предприятий',
+      date: '10 марта 2025',
+      topics: [
+        'Методология проведения аудита',
+        'Оформление результатов',
+        'Типичные нарушения',
+        'Рекомендации по устранению'
+      ],
+      isPast: true
+    },
+    {
+      id: 6,
+      title: 'Вебинар по отчётности в Росприроднадзор',
+      date: '27 ноября 2025',
+      topics: [
+        'Порядок предоставления отчётности',
+        'Электронная подача документов',
+        'Сверка данных с органами надзора'
+      ],
+      isPast: false
+    }
+  ],
+  2026: [
+    {
+      id: 7,
+      title: 'Экологическая модернизация бизнеса 2026',
+      date: '15 февраля 2026',
+      time: '10:00 - 14:00',
+      format: 'Онлайн',
+      participants: '50+',
+      topics: [
+        'Обзор изменений законодательства',
+        'Практические рекомендации',
+        'Новые требования к предприятиям'
+      ],
+      isPast: false
+    },
+    {
+      id: 8,
+      title: 'НОК в сфере экологии: подготовка к сертификации',
+      date: '1 марта 2026',
+      time: '10:00 - 13:00',
+      format: 'Онлайн',
+      participants: '100+',
+      topics: [
+        'Процедура сертификации',
+        'Требования к кандидатам',
+        'Практические советы по подготовке'
+      ],
+      isPast: false
+    },
+    {
+      id: 9,
+      title: 'Управление отходами: новые правила 2026',
+      date: '20 апреля 2026',
+      time: '11:00 - 15:00',
+      format: 'Очно',
+      participants: '30',
+      topics: [
+        'Изменения в классификации отходов',
+        'Новые требования к переработке',
+        'Цифровизация учёта отходов'
+      ],
+      isPast: false
+    }
+  ]
+};
+
+// Board members for Structure page
+export const boardMembers = [
+  {
+    id: 1,
+    name: 'Кондратьева Виктория',
+    position: 'Президент',
+    description: 'Руководит стратегическим развитием организации'
+  },
+  {
+    id: 2,
+    name: 'Прокофьев Сергей',
+    position: 'Вице-президент',
+    description: 'Председатель Совета по профессиональным квалификациям'
+  },
+  {
+    id: 3,
+    name: 'Тюрин Владислав',
+    position: 'Генеральный директор',
+    description: 'Управление операционной деятельностью организации'
+  }
+];
+
+// Union members for Structure page
+export const unionMembers = [
+  {
+    id: 1,
+    name: 'ООО "ЭкоТехнологии"',
+    type: 'Компания',
+    description: 'Разработка экологических решений для промышленности'
+  },
+  {
+    id: 2,
+    name: 'АО "ГринСервис"',
+    type: 'Компания',
+    description: 'Услуги по экологическому сопровождению предприятий'
+  },
+  {
+    id: 3,
+    name: 'ООО "ЭкоАудит"',
+    type: 'Компания',
+    description: 'Проведение экологических аудитов и экспертиз'
+  },
+  {
+    id: 4,
+    name: 'ООО "РесурсПром"',
+    type: 'Компания',
+    description: 'Переработка и утилизация отходов производства'
+  }
+];
+
 export const statistics = [
   { value: '500+', label: 'Членов организации' },
   { value: '50+', label: 'Проведённых семинаров' },
@@ -147,29 +319,45 @@ export const aboutText = {
 export const footerLinks = [
   {
     title: 'О Союзе',
+    href: '/about',
     links: [
-      { label: 'Цели и задачи', href: '#goals' },
-      { label: 'Устав', href: '#charter' },
-      { label: 'Руководство', href: '#leadership' },
-      { label: 'Как вступить', href: '#join' }
+      { label: 'Цели и задачи', href: '/about#goals' },
+      { label: 'Полномочия', href: '/about#authority' },
+      { label: 'Документы', href: '/about#documents' },
+      { label: 'Вступить в Союз', href: '/about#join' }
     ]
   },
   {
-    title: 'Деятельность',
+    title: 'Структура ОМОР',
+    href: '/structure',
     links: [
-      { label: 'Мероприятия', href: '#events' },
-      { label: 'Семинары', href: '#seminars' },
-      { label: 'Новости', href: '#news' },
-      { label: 'Документы', href: '#documents' }
+      { label: 'Общая картинка', href: '/structure#overview' },
+      { label: 'Состав членов Правления', href: '/structure#board' },
+      { label: 'Члены Союза', href: '/structure#members' }
     ]
   },
   {
-    title: 'Квалификации',
+    title: 'Мероприятия ОМОР',
+    href: '/events',
     links: [
-      { label: 'Профстандарты', href: '#standards' },
-      { label: 'СПК', href: '#spk' },
-      { label: 'Сертификация', href: '#certification' },
-      { label: 'Реестр', href: '#registry' }
+      { label: '2024', href: '/events?year=2024' },
+      { label: '2025', href: '/events?year=2025' },
+      { label: '2026', href: '/events?year=2026' }
     ]
+  },
+  {
+    title: 'Новости',
+    href: '/#news',
+    links: []
+  },
+  {
+    title: 'СПК',
+    href: '/spk',
+    links: []
+  },
+  {
+    title: 'Контакты',
+    href: '/#contacts',
+    links: []
   }
 ];

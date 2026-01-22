@@ -1,50 +1,23 @@
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import {
   organizationInfo,
-  contactInfo,
-  aboutText,
-  footerLinks
+  aboutText
 } from '../../data/content';
-import logo from '../../assets/logo.png';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import './styles.css';
+
+// Sidebar items for About page
+const sidebarItems = [
+  { id: 'goals', label: 'Цели и задачи', anchor: 'goals' },
+  { id: 'authority', label: 'Полномочия', anchor: 'authority' },
+  { id: 'documents', label: 'Документы', anchor: 'documents' },
+  { id: 'join', label: 'Вступить в Союз', anchor: 'join' }
+];
 
 // Icons
 const Icons = {
-  phone: () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-    </svg>
-  ),
-  email: () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-      <polyline points="22,6 12,13 2,6"/>
-    </svg>
-  ),
-  location: () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-      <circle cx="12" cy="10" r="3"/>
-    </svg>
-  ),
-  telegram: () => (
-    <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-    </svg>
-  ),
-  menu: () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="6" x2="21" y2="6"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
-    </svg>
-  ),
-  close: () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="18" y1="6" x2="6" y2="18"/>
-      <line x1="6" y1="6" x2="18" y2="18"/>
-    </svg>
-  ),
   check: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <polyline points="20,6 9,17 4,12"/>
@@ -55,39 +28,100 @@ const Icons = {
       <line x1="19" y1="12" x2="5" y2="12"/>
       <polyline points="12,19 5,12 12,5"/>
     </svg>
+  ),
+  arrowRight: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <line x1="5" y1="12" x2="19" y2="12"/>
+      <polyline points="12,5 19,12 12,19"/>
+    </svg>
+  ),
+  document: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+      <polyline points="14,2 14,8 20,8"/>
+      <line x1="16" y1="13" x2="8" y2="13"/>
+      <line x1="16" y1="17" x2="8" y2="17"/>
+      <polyline points="10,9 9,9 8,9"/>
+    </svg>
+  ),
+  download: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7,10 12,15 17,10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
   )
 };
 
+// Authority/Powers data
+const authorityItems = [
+  'Представление интересов членов Союза в органах государственной власти',
+  'Участие в разработке нормативных правовых актов в сфере экологии',
+  'Координация деятельности членов Союза по вопросам социального партнёрства',
+  'Проведение независимой оценки квалификаций специалистов',
+  'Разработка и актуализация профессиональных стандартов',
+  'Организация обучающих мероприятий и семинаров'
+];
+
+// Documents data
+const documents = [
+  { id: 1, title: 'Устав ОМОР', type: 'PDF', size: '1.2 MB' },
+  { id: 2, title: 'Свидетельство о регистрации', type: 'PDF', size: '0.5 MB' },
+  { id: 3, title: 'Положение о членстве', type: 'PDF', size: '0.8 MB' },
+  { id: 4, title: 'Кодекс этики', type: 'PDF', size: '0.4 MB' }
+];
+
 function About() {
+  const [currentSection, setCurrentSection] = useState('goals');
+  const location = useLocation();
+
+  // Scroll to hash on mount or when hash changes
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location.hash]);
+
+  // Track scroll position to update active sidebar item
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = sidebarItems.map(item => ({
+        id: item.anchor,
+        element: document.getElementById(item.anchor)
+      }));
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.element) {
+          const rect = section.element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            setCurrentSection(section.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="about-page">
-      {/* Header */}
-      <header className="header">
-        <div className="container">
-          <div className="header-content">
-            <Link to="/" className="logo">
-              <img src={logo} alt={organizationInfo.name} />
-            </Link>
-
-            <nav className="nav">
-              <ul className="nav-list">
-                <li><Link to="/about">О Союзе</Link></li>
-                <li><a href="/#structure">Структура ОМОР</a></li>
-                <li><a href="/#news">Новости</a></li>
-                <li><a href="/#seminars">Семинары</a></li>
-                <li><a href="/#spk">СПК</a></li>
-                <li><a href="/#contacts">Контакты</a></li>
-              </ul>
-            </nav>
-
-            <div className="header-actions">
-              <button className="mobile-menu-btn">
-                {Icons.menu()}
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Navbar with sidebar */}
+      <Navbar
+        showSidebar={true}
+        sidebarItems={sidebarItems}
+        currentSection={currentSection}
+      />
 
       {/* Back Button */}
       <section className="back-section">
@@ -128,9 +162,12 @@ function About() {
       </section>
 
       {/* Goals Section */}
-      <section className="about-section about-section-alt">
+      <section className="about-section about-section-alt" id="goals">
         <div className="container">
-          <h2>Наши цели</h2>
+          <div className="section-header-left">
+            <span className="section-tag">О нас</span>
+            <h2>Цели и задачи</h2>
+          </div>
           <div className="goals-grid">
             {aboutText.goals.map((goal, idx) => (
               <div key={idx} className="goal-card">
@@ -138,6 +175,88 @@ function About() {
                 <p>{goal}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Authority Section */}
+      <section className="about-section" id="authority">
+        <div className="container">
+          <div className="section-header-left">
+            <span className="section-tag">Деятельность</span>
+            <h2>Полномочия</h2>
+          </div>
+          <div className="authority-list">
+            {authorityItems.map((item, idx) => (
+              <div key={idx} className="authority-item">
+                <span className="check-icon">{Icons.check()}</span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Documents Section */}
+      <section className="about-section about-section-alt" id="documents">
+        <div className="container">
+          <div className="section-header-left">
+            <span className="section-tag">Материалы</span>
+            <h2>Документы</h2>
+          </div>
+          <div className="documents-grid">
+            {documents.map((doc) => (
+              <div key={doc.id} className="document-card">
+                <div className="document-icon">{Icons.document()}</div>
+                <div className="document-info">
+                  <h4>{doc.title}</h4>
+                  <span>{doc.type} • {doc.size}</span>
+                </div>
+                <button className="document-download">
+                  {Icons.download()}
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Join Section */}
+      <section className="about-section join-section" id="join">
+        <div className="container">
+          <div className="join-content">
+            <div className="section-header-left">
+              <span className="section-tag">Членство</span>
+              <h2>Вступить в Союз</h2>
+            </div>
+            <p className="join-description">
+              Станьте частью профессионального сообщества экологов России.
+              Членство в Союзе открывает доступ к экспертной поддержке,
+              обучающим мероприятиям и возможности участия в разработке
+              профессиональных стандартов.
+            </p>
+            <div className="join-benefits">
+              <div className="benefit-item">
+                <span className="check-icon">{Icons.check()}</span>
+                <span>Экспертная поддержка по вопросам экологии</span>
+              </div>
+              <div className="benefit-item">
+                <span className="check-icon">{Icons.check()}</span>
+                <span>Участие в семинарах и вебинарах</span>
+              </div>
+              <div className="benefit-item">
+                <span className="check-icon">{Icons.check()}</span>
+                <span>Скидки на независимую оценку квалификаций</span>
+              </div>
+              <div className="benefit-item">
+                <span className="check-icon">{Icons.check()}</span>
+                <span>Доступ к актуальной нормативной базе</span>
+              </div>
+            </div>
+            <Link to="/#contacts" className="btn btn-primary">
+              <span>Подать заявку</span>
+              {Icons.arrowRight()}
+            </Link>
           </div>
         </div>
       </section>
@@ -160,40 +279,7 @@ function About() {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-main">
-            <div className="footer-brand">
-              <img src={logo} alt={organizationInfo.name} className="footer-logo" />
-              <p>{organizationInfo.fullName}</p>
-              <div className="footer-registration">
-                <span>ОГРН: {organizationInfo.registration.ogrn}</span>
-                <span>ИНН: {organizationInfo.registration.inn}</span>
-              </div>
-            </div>
-
-            <div className="footer-links">
-              {footerLinks.map((column, idx) => (
-                <div key={idx} className="footer-column">
-                  <h4>{column.title}</h4>
-                  <ul>
-                    {column.links.map((link, linkIdx) => (
-                      <li key={linkIdx}>
-                        <a href={link.href}>{link.label}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="footer-bottom">
-            <p>&copy; 2025 {organizationInfo.name}. Все права защищены.</p>
-            <a href="#" className="social-link">{Icons.telegram()}</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

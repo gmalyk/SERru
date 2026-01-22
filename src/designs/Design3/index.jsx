@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import {
   organizationInfo,
   contactInfo,
-  navigation,
   news,
-  aboutText,
-  footerLinks
+  aboutText
 } from '../../data/content';
-import logo from '../../assets/logo.png';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import './styles.css';
 
 // Icons
@@ -33,19 +32,6 @@ const Icons = {
   telegram: () => (
     <svg viewBox="0 0 24 24" fill="currentColor">
       <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-    </svg>
-  ),
-  menu: () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="6" x2="21" y2="6"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
-    </svg>
-  ),
-  close: () => (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="18" y1="6" x2="6" y2="18"/>
-      <line x1="6" y1="6" x2="18" y2="18"/>
     </svg>
   ),
   arrowRight: () => (
@@ -80,55 +66,29 @@ const Icons = {
 };
 
 function Design3() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [formTopic, setFormTopic] = useState('');
+  const location = useLocation();
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % news.length);
-  };
+  // Scroll to hash section when navigating from another page
+  useEffect(() => {
+    if (location.hash) {
+      // Small delay to ensure the DOM is fully rendered
+      setTimeout(() => {
+        const element = document.getElementById(location.hash.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  }, [location]);
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + news.length) % news.length);
-  };
+  // Show first 3 news items in a grid
+  const displayedNews = news.slice(0, 3);
 
   return (
     <div className="design3">
-      {/* Header */}
-      <header className="header">
-        <div className="container">
-          <div className="header-content">
-            <a href="#" className="logo">
-              <img src={logo} alt={organizationInfo.name} />
-            </a>
-
-            <nav className={`nav ${mobileMenuOpen ? 'nav-open' : ''}`}>
-              <ul className="nav-list">
-                <li><Link to="/about">О Союзе</Link></li>
-                {navigation
-                  .filter((item) => !['Главная', 'Мероприятия', 'Деятельность ОМОР', 'Контакты', 'О Союзе', 'Семинары'].includes(item.label))
-                  .slice(0, 7)
-                  .map((item) => (
-                    <li key={item.id}>
-                      <a href={item.href}>{item.label}</a>
-                    </li>
-                  ))}
-                <li><Link to="/seminars">Семинары</Link></li>
-                <li><a href="#spk">СПК</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-              </ul>
-            </nav>
-
-            <div className="header-actions">
-              <button
-                className="mobile-menu-btn"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                {mobileMenuOpen ? Icons.close() : Icons.menu()}
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Navbar */}
+      <Navbar />
 
       {/* Hero */}
       <section className="hero">
@@ -179,7 +139,7 @@ function Design3() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/seminars" className="btn btn-primary">
+                <Link to="/events" className="btn btn-primary">
                   <span>Подробнее</span>
                   {Icons.arrowRight()}
                 </Link>
@@ -201,48 +161,25 @@ function Design3() {
             <h2>Новости и события</h2>
           </div>
 
-          <div className="news-carousel">
-            <button onClick={prevSlide} className="carousel-btn">
-              {Icons.chevronLeft()}
-            </button>
-
-            <div className="carousel-track">
-              {news.map((item, idx) => (
-                <div
-                  key={item.id}
-                  className={`news-slide ${idx === currentSlide ? 'active' : ''}`}
-                >
-                  <div className="news-image">
-                    <div className="placeholder-news">Новость {item.id}</div>
-                  </div>
-                  <div className="news-content">
-                    <span className="news-category">{item.category}</span>
-                    <h3>{item.title}</h3>
-                    <p>{item.excerpt}</p>
-                    <div className="news-footer">
-                      <span className="news-date">
-                        {Icons.calendar()}
-                        {item.date}
-                      </span>
-                      <a href="#" className="news-link">Читать далее</a>
-                    </div>
+          <div className="news-grid">
+            {displayedNews.map((item) => (
+              <div key={item.id} className="news-card">
+                <div className="news-card-image">
+                  <div className="placeholder-news">Новость {item.id}</div>
+                </div>
+                <div className="news-card-content">
+                  <span className="news-category">{item.category}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.excerpt}</p>
+                  <div className="news-card-footer">
+                    <span className="news-date">
+                      {Icons.calendar()}
+                      {item.date}
+                    </span>
+                    <a href="#" className="news-link">Читать далее</a>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            <button onClick={nextSlide} className="carousel-btn">
-              {Icons.chevronRight()}
-            </button>
-          </div>
-
-          <div className="carousel-dots">
-            {news.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentSlide(idx)}
-                className={`dot ${idx === currentSlide ? 'active' : ''}`}
-              />
+              </div>
             ))}
           </div>
         </div>
@@ -270,12 +207,11 @@ function Design3() {
                 </div>
                 <div className="form-group">
                   <label>Тема обращения</label>
-                  <select>
-                    <option>Выберите тему</option>
-                    <option>Вступление в Союз</option>
-                    <option>Консультация</option>
-                    <option>Семинары и обучение</option>
-                    <option>Другое</option>
+                  <select value={formTopic} onChange={(e) => setFormTopic(e.target.value)}>
+                    <option value="">Выберите тему</option>
+                    <option value="webinar">Участие в вебинаре</option>
+                    <option value="join">Вступить в Союз</option>
+                    <option value="other">Другое</option>
                   </select>
                 </div>
                 <div className="form-group">
@@ -305,7 +241,7 @@ function Design3() {
                   <div className="contact-icon">{Icons.phone()}</div>
                   <div>
                     <strong>Телефон</strong>
-                    <p><a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a></p>
+                    <p><a href={`tel:${contactInfo.phone.replace(/[^+\d]/g, '')}`}>{contactInfo.phone}</a></p>
                   </div>
                 </div>
 
@@ -321,7 +257,7 @@ function Design3() {
                   <div className="contact-icon">{Icons.telegram()}</div>
                   <div>
                     <strong>Telegram</strong>
-                    <p><a href="#">{contactInfo.telegram}</a></p>
+                    <p><a href={contactInfo.telegramLink} target="_blank" rel="noopener noreferrer">{contactInfo.telegram}</a></p>
                   </div>
                 </div>
               </div>
@@ -331,40 +267,7 @@ function Design3() {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-main">
-            <div className="footer-brand">
-              <img src={logo} alt={organizationInfo.name} className="footer-logo" />
-              <p>{organizationInfo.fullName}</p>
-              <div className="footer-registration">
-                <span>ОГРН: {organizationInfo.registration.ogrn}</span>
-                <span>ИНН: {organizationInfo.registration.inn}</span>
-              </div>
-            </div>
-
-            <div className="footer-links">
-              {footerLinks.map((column, idx) => (
-                <div key={idx} className="footer-column">
-                  <h4>{column.title}</h4>
-                  <ul>
-                    {column.links.map((link, linkIdx) => (
-                      <li key={linkIdx}>
-                        <a href={link.href}>{link.label}</a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="footer-bottom">
-            <p>&copy; 2025 {organizationInfo.name}. Все права защищены.</p>
-            <a href="#" className="social-link">{Icons.telegram()}</a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
