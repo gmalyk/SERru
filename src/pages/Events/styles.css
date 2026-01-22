@@ -11,6 +11,22 @@
   padding: 0 20px;
 }
 
+.events-page .back-section .container,
+.events-page .events-hero .container,
+.events-page .year-tabs-section .container,
+.events-page .events-section .container {
+  padding: 0 20px 0 140px;
+}
+
+@media (max-width: 1024px) {
+  .events-page .back-section .container,
+  .events-page .events-hero .container,
+  .events-page .year-tabs-section .container,
+  .events-page .events-section .container {
+    padding: 0 20px;
+  }
+}
+
 /* ========== Back Section ========== */
 .back-section {
   padding-top: 100px;

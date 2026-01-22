@@ -118,7 +118,11 @@ function Navbar({ showSidebar = false, sidebarItems = [], currentSection = '', o
       <header className="navbar-header">
         <div className="container">
           <div className="navbar-content">
-            <Link to="/" className="navbar-logo">
+            <Link
+              to="/"
+              className="navbar-logo"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img src={logo} alt={organizationInfo.name} />
             </Link>
 

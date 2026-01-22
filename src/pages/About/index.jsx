@@ -65,10 +65,8 @@ const authorityItems = [
 
 // Documents data
 const documents = [
-  { id: 1, title: 'Устав ОМОР', type: 'PDF', size: '1.2 MB' },
-  { id: 2, title: 'Свидетельство о регистрации', type: 'PDF', size: '0.5 MB' },
-  { id: 3, title: 'Положение о членстве', type: 'PDF', size: '0.8 MB' },
-  { id: 4, title: 'Кодекс этики', type: 'PDF', size: '0.4 MB' }
+  { id: 'prikaz', title: 'Приказ о вступлении в должность Тюрин В.А.', type: 'PDF' },
+  { id: 'rekvizity', title: 'Реквизиты ОМОР СЭР', type: 'PDF' }
 ];
 
 function About() {
@@ -206,16 +204,16 @@ function About() {
           </div>
           <div className="documents-grid">
             {documents.map((doc) => (
-              <div key={doc.id} className="document-card">
+              <a key={doc.id} href={`/document?doc=${doc.id}`} target="_blank" rel="noopener noreferrer" className="document-card">
                 <div className="document-icon">{Icons.document()}</div>
                 <div className="document-info">
                   <h4>{doc.title}</h4>
-                  <span>{doc.type} • {doc.size}</span>
+                  <span>{doc.type}</span>
                 </div>
-                <button className="document-download">
-                  {Icons.download()}
-                </button>
-              </div>
+                <div className="document-view">
+                  {Icons.arrowRight()}
+                </div>
+              </a>
             ))}
           </div>
         </div>
