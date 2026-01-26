@@ -12,6 +12,11 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 import pdfPrikaz from '../../assets/Приказ_о_вступлении_в_должность_Тюрин_В_А_.pdf';
 import pdfRekvizity from '../../assets/Реквизиты ОМОР СЭР.pdf';
 
+// Note: Additional PDFs should be added to assets folder:
+// - НОВЫЙ-УСТАВ-СЭР-2025-1.pdf (for ustav)
+// - polozhenie-o-chlenstve-v-omor-sjer-dlja-sajta-ot-10.10.2023-3.pdf (for membership)
+// - perechen-dokumentov-dlja-vstuplenija-v-omor.pdf (for perechen)
+
 // Document mapping
 const documentsMap = {
   'prikaz': {
@@ -20,7 +25,20 @@ const documentsMap = {
   },
   'rekvizity': {
     file: pdfRekvizity,
-    title: 'Реквизиты ОМОР СЭР'
+    title: 'Карточка ОМОР «Союз Экологов России»'
+  },
+  // Placeholder entries - files need to be added to assets
+  'ustav': {
+    file: null, // Add: import pdfUstav from '../../assets/НОВЫЙ-УСТАВ-СЭР-2025-1.pdf';
+    title: 'Устав ОМОР «Союз Экологов России»'
+  },
+  'membership': {
+    file: null, // Add: import pdfMembership from '../../assets/polozhenie-o-chlenstve-v-omor-sjer-dlja-sajta-ot-10.10.2023-3.pdf';
+    title: 'Положение о членстве в ОМОР «Союз Экологов России»'
+  },
+  'perechen': {
+    file: null, // Add: import pdfPerechen from '../../assets/perechen-dokumentov-dlja-vstuplenija-v-omor.pdf';
+    title: 'Перечень документов для вступления в ОМОР'
   }
 };
 
@@ -109,6 +127,21 @@ function DocumentViewer() {
       <div className="viewer-page">
         <div className="viewer-error">
           <h2>Документ не найден</h2>
+          <Link to="/about#documents" className="back-btn">
+            {Icons.arrowLeft()}
+            <span>Вернуться к документам</span>
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (!currentDoc.file) {
+    return (
+      <div className="viewer-page">
+        <div className="viewer-error">
+          <h2>{currentDoc.title}</h2>
+          <p style={{ color: '#616161', marginBottom: '20px' }}>Документ временно недоступен</p>
           <Link to="/about#documents" className="back-btn">
             {Icons.arrowLeft()}
             <span>Вернуться к документам</span>
