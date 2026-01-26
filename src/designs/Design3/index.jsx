@@ -82,8 +82,8 @@ function Design3() {
     }
   }, [location]);
 
-  // Show first 3 news items in a grid
-  const displayedNews = news.slice(0, 3);
+  // Show all news items in a scrollable carousel
+  const displayedNews = news;
 
   return (
     <div className="design3">
@@ -162,25 +162,43 @@ function Design3() {
           </div>
 
           <div className="news-grid">
-            {displayedNews.map((item) => (
-              <div key={item.id} className="news-card">
-                <div className="news-card-image">
-                  <div className="placeholder-news">Новость {item.id}</div>
-                </div>
-                <div className="news-card-content">
-                  <span className="news-category">{item.category}</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.excerpt}</p>
-                  <div className="news-card-footer">
-                    <span className="news-date">
-                      {Icons.calendar()}
-                      {item.date}
-                    </span>
-                    <a href="#" className="news-link">Читать далее</a>
+            {displayedNews.map((item) => {
+              // If item has excerpt, link to detail page; otherwise link to external URL
+              const hasDetailPage = item.excerpt && item.excerpt.length > 0;
+              const linkProps = hasDetailPage
+                ? { to: `/news/${item.id}` }
+                : {
+                    href: item.link || '#',
+                    target: item.link ? '_blank' : undefined,
+                    rel: item.link ? 'noopener noreferrer' : undefined
+                  };
+              const LinkComponent = hasDetailPage ? Link : 'a';
+
+              return (
+                <LinkComponent
+                  key={item.id}
+                  className="news-card"
+                  {...linkProps}
+                >
+                  <div className="news-card-image">
+                    <div className="placeholder-news">Новость {item.id}</div>
                   </div>
-                </div>
-              </div>
-            ))}
+                  <div className="news-card-content">
+                    <span className="news-category">{item.category}</span>
+                    <h3>{item.title}</h3>
+                    <div className="news-card-footer">
+                      {item.date && (
+                        <span className="news-date">
+                          {Icons.calendar()}
+                          {item.date}
+                        </span>
+                      )}
+                      <span className="news-link">Читать далее</span>
+                    </div>
+                  </div>
+                </LinkComponent>
+              );
+            })}
           </div>
         </div>
       </section>

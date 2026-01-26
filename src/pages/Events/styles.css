@@ -71,272 +71,250 @@
 }
 
 .events-hero h1 {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 800;
   color: #212121;
   margin-bottom: 16px;
 }
 
 .events-hero-subtitle {
-  font-size: 18px;
+  font-size: 20px;
   color: #616161;
   line-height: 1.6;
+  max-width: 600px;
 }
 
 /* ========== Year Tabs ========== */
 .year-tabs-section {
-  padding-bottom: 40px;
+  padding: 20px 0 40px;
 }
 
 .year-tabs {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  background: var(--gray-light);
+  padding: 6px;
+  border-radius: 12px;
+  width: fit-content;
 }
 
 .year-tab {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 24px;
-  background: var(--gray-light);
-  border: 2px solid transparent;
-  border-radius: 12px;
+  padding: 12px 32px;
   font-size: 16px;
   font-weight: 600;
   color: #616161;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .year-tab:hover {
-  background: rgba(76, 175, 80, 0.08);
-  color: var(--green-primary);
+  color: #212121;
 }
 
 .year-tab.active {
   background: var(--white);
-  border-color: var(--green-primary);
   color: var(--green-primary);
-}
-
-.tab-badge {
-  padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 20px;
-  text-transform: uppercase;
-}
-
-.tab-badge.past {
-  background: rgba(158, 158, 158, 0.15);
-  color: #9E9E9E;
-}
-
-.tab-badge.upcoming {
-  background: rgba(76, 175, 80, 0.15);
-  color: var(--green-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* ========== Events Section ========== */
 .events-section {
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 }
 
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+/* ========== Seminars List ========== */
+.seminars-list {
+  display: flex;
+  flex-direction: column;
   gap: 24px;
 }
 
-.event-card {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s;
+/* Detailed Seminar Card */
+.seminar-card-detailed {
   display: flex;
-  flex-direction: column;
+  gap: 24px;
+  background: var(--white);
+  border: 1px solid #E0E0E0;
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s;
 }
 
-.event-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+.seminar-card-detailed:hover {
+  border-color: var(--green-light);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
-.event-card.past {
-  background: var(--gray-light);
+.seminar-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: linear-gradient(135deg, var(--green-light) 0%, var(--green-primary) 100%);
+  color: var(--white);
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 12px;
 }
 
-.event-header {
+.seminar-content {
+  flex: 1;
+}
+
+.seminar-header {
   margin-bottom: 20px;
 }
 
-.event-badge {
-  display: inline-block;
+.seminar-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.seminar-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #616161;
+}
+
+.seminar-date svg {
+  width: 18px;
+  height: 18px;
+  color: var(--green-primary);
+}
+
+.seminar-format {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 14px;
   font-size: 12px;
   font-weight: 600;
   border-radius: 6px;
   text-transform: uppercase;
-  margin-bottom: 12px;
 }
 
-.event-badge.past {
-  background: rgba(158, 158, 158, 0.15);
-  color: #757575;
+.seminar-format svg {
+  width: 16px;
+  height: 16px;
 }
 
-.event-badge.upcoming {
+.format-online {
+  background: rgba(33, 150, 243, 0.1);
+  color: #1976D2;
+}
+
+.format-offline {
   background: var(--yellow-accent);
   color: #212121;
 }
 
-.event-header h3 {
-  font-size: 18px;
+.seminar-header h3 {
+  font-size: 20px;
   font-weight: 700;
   color: #212121;
   line-height: 1.4;
-  margin: 0;
 }
 
-.event-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.seminar-description {
   margin-bottom: 20px;
 }
 
-.event-meta-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
+.seminar-description p {
+  font-size: 15px;
   color: #616161;
+  line-height: 1.7;
+  margin-bottom: 12px;
 }
 
-.event-meta-item svg {
-  width: 16px;
-  height: 16px;
-  color: #9E9E9E;
+.seminar-description p:last-child {
+  margin-bottom: 0;
 }
 
-/* ========== Topics Section ========== */
-.event-topics {
-  flex: 1;
-  margin-bottom: 20px;
+/* Seminar Topics */
+.seminar-topics {
+  margin-bottom: 24px;
 }
 
-.topics-toggle {
+.seminar-topics h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 16px;
+}
+
+.seminar-topics ul {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 12px 16px;
-  background: rgba(76, 175, 80, 0.05);
-  border: 1px solid rgba(76, 175, 80, 0.1);
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.seminar-topics li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--gray-light);
+  border-radius: 8px;
+}
+
+.seminar-topics li svg {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
   color: var(--green-primary);
+  margin-top: 2px;
+}
+
+.seminar-topics li span {
+  font-size: 14px;
+  color: #424242;
+  line-height: 1.5;
+}
+
+/* Seminar Actions */
+.seminar-actions {
+  padding-top: 16px;
+  border-top: 1px solid #E0E0E0;
+}
+
+.buy-video-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--green-primary);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s;
 }
 
-.topics-toggle:hover {
-  background: rgba(76, 175, 80, 0.1);
-}
-
-.topics-toggle svg {
-  width: 18px;
-  height: 18px;
-}
-
-.topics-list {
-  margin-top: 12px;
-  padding: 16px;
-  background: rgba(76, 175, 80, 0.03);
-  border-radius: 10px;
-  list-style: none;
-}
-
-.topics-list li {
-  position: relative;
-  padding: 8px 0 8px 20px;
-  font-size: 14px;
-  color: #616161;
-  line-height: 1.5;
-}
-
-.topics-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 14px;
-  width: 6px;
-  height: 6px;
-  background: var(--green-primary);
-  border-radius: 50%;
-}
-
-.topics-list li:last-child {
-  padding-bottom: 0;
-}
-
-/* ========== Action Buttons ========== */
-.event-actions {
-  margin-top: auto;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 14px 24px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s;
-  border: 2px solid transparent;
-}
-
-.btn svg {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.2s;
-}
-
-.btn:hover svg {
-  transform: translateX(4px);
-}
-
-.btn-primary {
-  background: var(--green-primary);
-  color: var(--white);
-}
-
-.btn-primary:hover {
+.buy-video-btn:hover {
   background: var(--green-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
 
-.btn-secondary {
-  background: var(--white);
-  border-color: var(--green-primary);
-  color: var(--green-primary);
-}
-
-.btn-secondary:hover {
-  background: var(--green-primary);
-  color: var(--white);
-}
-
-.btn-secondary:hover svg {
-  transform: translateX(0);
+.buy-video-btn svg {
+  width: 20px;
+  height: 20px;
 }
 
 /* ========== No Events ========== */
@@ -356,8 +334,20 @@
 /* ========== Responsive ========== */
 
 @media (max-width: 900px) {
-  .events-grid {
-    grid-template-columns: 1fr;
+  .events-hero h1 {
+    font-size: 36px;
+  }
+
+  .seminar-card-detailed {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .seminar-number {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    font-size: 16px;
   }
 }
 
@@ -375,51 +365,91 @@
   }
 
   .year-tab {
-    padding: 12px 18px;
+    padding: 10px 24px;
+    font-size: 15px;
+  }
+
+  .seminar-card-detailed {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .seminar-header h3 {
+    font-size: 18px;
+  }
+
+  .seminar-description p {
     font-size: 14px;
   }
 
-  .tab-badge {
-    display: none;
+  .seminar-topics li {
+    padding: 8px 12px;
   }
 
-  .event-card {
-    padding: 24px;
+  .seminar-topics li span {
+    font-size: 13px;
   }
 
-  .event-header h3 {
-    font-size: 16px;
-  }
-
-  .event-meta {
-    gap: 12px;
+  .buy-video-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 480px) {
+  .events-page .container {
+    padding: 0 16px;
+  }
+
   .events-hero h1 {
     font-size: 28px;
   }
 
+  .events-hero-subtitle {
+    font-size: 14px;
+  }
+
   .year-tabs {
-    flex-direction: row;
-    overflow-x: auto;
-    padding-bottom: 8px;
-    -webkit-overflow-scrolling: touch;
+    width: 100%;
   }
 
   .year-tab {
-    flex-shrink: 0;
+    flex: 1;
     padding: 10px 16px;
     font-size: 14px;
   }
 
-  .event-card {
-    padding: 20px;
+  .seminar-card-detailed {
+    padding: 16px;
   }
 
-  .event-meta {
+  .seminar-number {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .seminar-header h3 {
+    font-size: 16px;
+  }
+
+  .seminar-meta-row {
     flex-direction: column;
+    align-items: flex-start;
     gap: 8px;
+  }
+
+  .seminar-topics h4 {
+    font-size: 14px;
+  }
+
+  .seminar-topics li svg {
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
   }
 }

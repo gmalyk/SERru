@@ -506,17 +506,45 @@
 }
 
 .news-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+
+.news-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.news-grid::-webkit-scrollbar-track {
+  background: var(--gray-light);
+  border-radius: 4px;
+}
+
+.news-grid::-webkit-scrollbar-thumb {
+  background: var(--green-primary);
+  border-radius: 4px;
+}
+
+.news-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--green-dark);
 }
 
 .news-card {
+  display: block;
+  flex: 0 0 350px;
+  min-width: 350px;
   background: var(--white);
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+  scroll-snap-align: start;
 }
 
 .news-card:hover {
@@ -543,6 +571,9 @@
 
 .news-card-content {
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .news-category {
@@ -558,24 +589,19 @@
 }
 
 .news-card-content h3 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #212121;
   line-height: 1.4;
-  margin-bottom: 12px;
-}
-
-.news-card-content p {
-  font-size: 14px;
-  color: #616161;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  flex: 1;
 }
 
 .news-card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 }
 
 .news-date {
@@ -595,9 +621,10 @@
   color: var(--green-primary);
   font-weight: 600;
   font-size: 14px;
+  transition: text-decoration 0.2s;
 }
 
-.news-link:hover {
+.news-card:hover .news-link {
   text-decoration: underline;
 }
 
@@ -879,9 +906,9 @@
     font-size: 32px;
   }
 
-  .news-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+  .news-card {
+    flex: 0 0 320px;
+    min-width: 320px;
   }
 }
 
@@ -903,8 +930,9 @@
     grid-template-columns: 1fr;
   }
 
-  .news-grid {
-    grid-template-columns: 1fr;
+  .news-card {
+    flex: 0 0 300px;
+    min-width: 300px;
   }
 }
 
@@ -1015,8 +1043,12 @@
   }
 
   .news-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
+  }
+
+  .news-card {
+    flex: 0 0 280px;
+    min-width: 280px;
   }
 
   .news-card-image {
@@ -1028,17 +1060,13 @@
   }
 
   .news-card-content h3 {
-    font-size: 16px;
-  }
-
-  .news-card-content p {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .news-card-footer {
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 8px;
   }
 
   /* Contact Section */

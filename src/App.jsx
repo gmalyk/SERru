@@ -4,6 +4,7 @@ import About from './pages/About';
 import Structure from './pages/Structure';
 import Events from './pages/Events';
 import DocumentViewer from './pages/DocumentViewer';
+import NewsDetail from './pages/NewsDetail';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/structure" element={<Structure />} />
         <Route path="/events" element={<Events />} />
         <Route path="/document" element={<DocumentViewer />} />
+        <Route path="/news/:id" element={<NewsDetail />} />
         {/* Redirect old seminars path to events */}
         <Route path="/seminars" element={<Events />} />
       </Routes>
