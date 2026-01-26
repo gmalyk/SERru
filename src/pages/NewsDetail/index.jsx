@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { news } from '../../data/content';
 import Navbar from '../../components/Navbar';
@@ -32,6 +33,11 @@ const Icons = {
 function NewsDetail() {
   const { id } = useParams();
   const newsItem = news.find(item => item.id === parseInt(id));
+
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   // Redirect to home if news item not found
   if (!newsItem) {
