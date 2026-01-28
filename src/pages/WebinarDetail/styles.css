@@ -1,0 +1,244 @@
+/* Webinar Detail Page Styles */
+
+.webinar-detail-page {
+  min-height: 100vh;
+  background-color: var(--white);
+}
+
+.webinar-detail-page .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ========== Back Section ========== */
+.webinar-detail-page .back-section {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+.webinar-detail-page .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #616161;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.webinar-detail-page .back-link:hover {
+  color: var(--green-primary);
+}
+
+.webinar-detail-page .back-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ========== Webinar Detail Section ========== */
+.webinar-detail-section {
+  padding: 40px 0 100px;
+}
+
+.webinar-article {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.webinar-article-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.webinar-article-header .webinar-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--green-primary);
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.webinar-article-header .webinar-format {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--green-primary);
+  font-weight: 600;
+}
+
+.webinar-article-header .webinar-format svg {
+  width: 18px;
+  height: 18px;
+}
+
+.webinar-article-header .webinar-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #616161;
+  font-weight: 500;
+}
+
+.webinar-article-header .webinar-date svg {
+  width: 18px;
+  height: 18px;
+}
+
+.webinar-article h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #212121;
+  line-height: 1.3;
+  margin-bottom: 32px;
+}
+
+/* ========== Speakers Section ========== */
+.webinar-speakers {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, rgba(76, 175, 80, 0.04) 100%);
+  border-left: 4px solid var(--green-primary);
+  padding: 24px;
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 40px;
+}
+
+.webinar-speakers p {
+  font-size: 16px;
+  color: #424242;
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ========== Topics Section ========== */
+.webinar-topics {
+  margin-bottom: 40px;
+}
+
+.webinar-topics h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 24px;
+}
+
+.topics-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topics-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.topics-list li:last-child {
+  border-bottom: none;
+}
+
+.topics-list .check-icon {
+  width: 28px;
+  height: 28px;
+  background: rgba(76, 175, 80, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--green-primary);
+}
+
+.topics-list .check-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.topics-list li span:last-child {
+  font-size: 16px;
+  color: #424242;
+  line-height: 1.6;
+  padding-top: 4px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .webinar-article {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+
+  .webinar-article h1 {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .webinar-speakers {
+    padding: 20px;
+    margin-bottom: 32px;
+  }
+
+  .webinar-speakers p {
+    font-size: 15px;
+  }
+
+  .webinar-topics h2 {
+    font-size: 18px;
+  }
+
+  .topics-list li {
+    padding: 14px 0;
+  }
+
+  .topics-list li span:last-child {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .webinar-detail-page .container {
+    padding: 0 16px;
+  }
+
+  .webinar-article {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+
+  .webinar-article h1 {
+    font-size: 22px;
+  }
+
+  .webinar-article-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .topics-list .check-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .topics-list .check-icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .topics-list li span:last-child {
+    font-size: 14px;
+  }
+}

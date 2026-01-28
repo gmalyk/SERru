@@ -14,59 +14,82 @@ import './styles.css';
 const Icons = {
   phone: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   ),
   email: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-      <polyline points="22,6 12,13 2,6"/>
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+      <polyline points="22,6 12,13 2,6" />
     </svg>
   ),
   location: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-      <circle cx="12" cy="10" r="3"/>
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
     </svg>
   ),
   telegram: () => (
     <svg viewBox="0 0 24 24" fill="currentColor">
-      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
     </svg>
   ),
   arrowRight: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="5" y1="12" x2="19" y2="12"/>
-      <polyline points="12,5 19,12 12,19"/>
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12,5 19,12 12,19" />
     </svg>
   ),
   check: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <polyline points="20,6 9,17 4,12"/>
+      <polyline points="20,6 9,17 4,12" />
     </svg>
   ),
   calendar: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-      <line x1="16" y1="2" x2="16" y2="6"/>
-      <line x1="8" y1="2" x2="8" y2="6"/>
-      <line x1="3" y1="10" x2="21" y2="10"/>
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
     </svg>
   ),
   chevronLeft: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <polyline points="15,18 9,12 15,6"/>
+      <polyline points="15,18 9,12 15,6" />
     </svg>
   ),
   chevronRight: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <polyline points="9,18 15,12 9,6"/>
+      <polyline points="9,18 15,12 9,6" />
     </svg>
   )
 };
 
+// Seminars data for carousel
+const seminars = [
+  {
+    id: 1,
+    tag: 'семинар',
+    title: 'ВСЕ ГРАНИ РАСШИРЕННОЙ ОТВЕТСТВЕННОСТИ ПРОИЗВОДИТЕЛЕЙ, ИМПОРТЕРОВ И УТИЛИЗАТОРОВ: ОТ ТЕОРИИ ДО ПРАКТИКИ',
+    format: 'Формат семинара: очно и ВКС 10-11 февраля 2026 года',
+    externalLink: 'https://семинар-роп2026.рф/#about',
+    internalLink: null,
+    year: '2026'
+  },
+  {
+    id: 2,
+    tag: 'вебинар',
+    title: 'Организация экологического контроля: разработка деклараций НВОС и профессиональных экологических квалификаций',
+    format: 'Формат: ВКС 26 февраля 2026 года',
+    externalLink: null,
+    internalLink: '/webinar/eco-control-2026',
+    year: '2026'
+  }
+];
+
 function Design3() {
   const [formTopic, setFormTopic] = useState('');
+  const [currentSeminar, setCurrentSeminar] = useState(0);
   const location = useLocation();
 
   // Scroll to hash section when navigating from another page
@@ -110,11 +133,14 @@ function Design3() {
         </div>
       </section>
 
-      {/* About */}
+      {/* About / Seminars Carousel */}
       <section className="about" id="about">
         <div className="container">
           <div className="about-carousel">
-            <button className="about-nav-btn about-nav-prev">
+            <button
+              className="about-nav-btn about-nav-prev"
+              onClick={() => setCurrentSeminar((prev) => (prev === 0 ? seminars.length - 1 : prev - 1))}
+            >
               {Icons.chevronLeft()}
             </button>
 
@@ -122,31 +148,45 @@ function Design3() {
               <div className="about-image">
                 <div className="placeholder-about">
                   <div className="about-badge">
-                    <span className="badge-year">2023</span>
-                    <span className="badge-text">Год основания</span>
+                    <span className="badge-year">{seminars[currentSeminar].year}</span>
+                    <span className="badge-text">Год проведения</span>
                   </div>
                 </div>
               </div>
 
               <div className="about-content">
-                <span className="section-tag">семинар</span>
-                <h2>Объединяем профессионалов в сфере экологии</h2>
-                <ul className="about-list">
-                  {aboutText.goals.map((goal, idx) => (
-                    <li key={idx}>
-                      <span className="check-icon">{Icons.check()}</span>
-                      <span>{goal}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/events" className="btn btn-primary">
-                  <span>Подробнее</span>
-                  {Icons.arrowRight()}
-                </Link>
+                <span className="section-tag">{seminars[currentSeminar].tag}</span>
+                <h2>{seminars[currentSeminar].title}</h2>
+                <p className="seminar-format">{seminars[currentSeminar].format}</p>
+
+                {seminars[currentSeminar].externalLink ? (
+                  <a
+                    href={seminars[currentSeminar].externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    <span>Подробнее</span>
+                    {Icons.arrowRight()}
+                  </a>
+                ) : seminars[currentSeminar].internalLink ? (
+                  <Link to={seminars[currentSeminar].internalLink} className="btn btn-primary">
+                    <span>Подробнее</span>
+                    {Icons.arrowRight()}
+                  </Link>
+                ) : (
+                  <Link to="/events" className="btn btn-primary">
+                    <span>Мероприятия</span>
+                    {Icons.arrowRight()}
+                  </Link>
+                )}
               </div>
             </div>
 
-            <button className="about-nav-btn about-nav-next">
+            <button
+              className="about-nav-btn about-nav-next"
+              onClick={() => setCurrentSeminar((prev) => (prev === seminars.length - 1 ? 0 : prev + 1))}
+            >
               {Icons.chevronRight()}
             </button>
           </div>
@@ -168,10 +208,10 @@ function Design3() {
               const linkProps = hasDetailPage
                 ? { to: `/news/${item.id}` }
                 : {
-                    href: item.link || '#',
-                    target: item.link ? '_blank' : undefined,
-                    rel: item.link ? 'noopener noreferrer' : undefined
-                  };
+                  href: item.link || '#',
+                  target: item.link ? '_blank' : undefined,
+                  rel: item.link ? 'noopener noreferrer' : undefined
+                };
               const LinkComponent = hasDetailPage ? Link : 'a';
 
               return (

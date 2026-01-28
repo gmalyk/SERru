@@ -8,20 +8,20 @@ import './styles.css';
 const Icons = {
   menu: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="6" x2="21" y2="6"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
+      <line x1="3" y1="12" x2="21" y2="12" />
+      <line x1="3" y1="6" x2="21" y2="6" />
+      <line x1="3" y1="18" x2="21" y2="18" />
     </svg>
   ),
   close: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="18" y1="6" x2="6" y2="18"/>
-      <line x1="6" y1="6" x2="18" y2="18"/>
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
   ),
   chevronDown: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <polyline points="6,9 12,15 18,9"/>
+      <polyline points="6,9 12,15 18,9" />
     </svg>
   )
 };
@@ -47,7 +47,6 @@ const navConfig = [
     isRoute: true,
     submenu: null, // No dropdown in top bar, only sidebar on page
     sidebarMenu: [
-      { id: 'overview', label: 'Общая картинка', anchor: 'overview' },
       { id: 'board', label: 'Состав членов Правления', anchor: 'board' },
       { id: 'members', label: 'Члены Союза', anchor: 'members' }
     ]

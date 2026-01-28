@@ -17,63 +17,63 @@ const sidebarItems = [
 const Icons = {
   check: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <polyline points="20,6 9,17 4,12"/>
+      <polyline points="20,6 9,17 4,12" />
     </svg>
   ),
   arrowLeft: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="19" y1="12" x2="5" y2="12"/>
-      <polyline points="12,19 5,12 12,5"/>
+      <line x1="19" y1="12" x2="5" y2="12" />
+      <polyline points="12,19 5,12 12,5" />
     </svg>
   ),
   arrowRight: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="5" y1="12" x2="19" y2="12"/>
-      <polyline points="12,5 19,12 12,19"/>
+      <line x1="5" y1="12" x2="19" y2="12" />
+      <polyline points="12,5 19,12 12,19" />
     </svg>
   ),
   document: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-      <polyline points="14,2 14,8 20,8"/>
-      <line x1="16" y1="13" x2="8" y2="13"/>
-      <line x1="16" y1="17" x2="8" y2="17"/>
-      <polyline points="10,9 9,9 8,9"/>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <polyline points="14,2 14,8 20,8" />
+      <line x1="16" y1="13" x2="8" y2="13" />
+      <line x1="16" y1="17" x2="8" y2="17" />
+      <polyline points="10,9 9,9 8,9" />
     </svg>
   ),
   download: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-      <polyline points="7,10 12,15 17,10"/>
-      <line x1="12" y1="15" x2="12" y2="3"/>
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <polyline points="7,10 12,15 17,10" />
+      <line x1="12" y1="15" x2="12" y2="3" />
     </svg>
   ),
   chevronDown: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <polyline points="6,9 12,15 18,9"/>
+      <polyline points="6,9 12,15 18,9" />
     </svg>
   ),
   chevronUp: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <polyline points="18,15 12,9 6,15"/>
+      <polyline points="18,15 12,9 6,15" />
     </svg>
   ),
   development: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-      <path d="M2 17l10 5 10-5"/>
-      <path d="M2 12l10 5 10-5"/>
+      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+      <path d="M2 17l10 5 10-5" />
+      <path d="M2 12l10 5 10-5" />
     </svg>
   ),
   shield: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
     </svg>
   ),
   education: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-      <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+      <path d="M6 12v5c3 3 9 3 12 0v-5" />
     </svg>
   )
 };
@@ -275,7 +275,6 @@ function About() {
       <section className="about-section" id="goals">
         <div className="container">
           <div className="section-header-left">
-            <span className="section-tag">1.1</span>
             <h2>Наши цели и задачи</h2>
           </div>
           <div className="goals-intro">
@@ -317,7 +316,6 @@ function About() {
       <section className="about-section about-section-alt" id="authority">
         <div className="container">
           <div className="section-header-left">
-            <span className="section-tag">1.2</span>
             <h2>Полномочия</h2>
           </div>
 
@@ -407,7 +405,6 @@ function About() {
       <section className="about-section" id="documents">
         <div className="container">
           <div className="section-header-left">
-            <span className="section-tag">1.3</span>
             <h2>Документы</h2>
           </div>
           <p className="documents-note">Документы доступны для просмотра в режиме чтения</p>
@@ -439,7 +436,6 @@ function About() {
         <div className="container">
           <div className="join-content-wrapper">
             <div className="section-header-left">
-              <span className="section-tag">1.4</span>
               <h2>Вступить в Союз</h2>
             </div>
 
@@ -497,11 +493,11 @@ function About() {
             <div className="join-process">
               <p>
                 Решение о приеме в члены объединения работодателей принимает <strong>Правление Союза Экологов
-                России</strong> на ближайшем после подачи заявления о вступлении заседании.
+                  России</strong> на ближайшем после подачи заявления о вступлении заседании.
               </p>
               <p>
                 Порядок членства и размер членских взносов устанавливаются <strong>Положением о членстве в ОМОР
-                «Союз Экологов России»</strong>
+                  «Союз Экологов России»</strong>
               </p>
             </div>
 

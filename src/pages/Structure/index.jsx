@@ -11,7 +11,6 @@ import './styles.css';
 
 // Sidebar items for Structure page
 const sidebarItems = [
-  { id: 'overview', label: 'Общая картинка', anchor: 'overview' },
   { id: 'board', label: 'Состав членов Правления', anchor: 'board' },
   { id: 'members', label: 'Члены Союза', anchor: 'members' }
 ];
@@ -20,76 +19,76 @@ const sidebarItems = [
 const Icons = {
   arrowLeft: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <line x1="19" y1="12" x2="5" y2="12"/>
-      <polyline points="12,19 5,12 12,5"/>
+      <line x1="19" y1="12" x2="5" y2="12" />
+      <polyline points="12,19 5,12 12,5" />
     </svg>
   ),
   users: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-      <circle cx="9" cy="7" r="4"/>
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
     </svg>
   ),
   building: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M3 21h18"/>
-      <path d="M9 21V6a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v15"/>
-      <path d="M9 9h6"/>
-      <path d="M9 13h6"/>
-      <path d="M9 17h6"/>
+      <path d="M3 21h18" />
+      <path d="M9 21V6a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v15" />
+      <path d="M9 9h6" />
+      <path d="M9 13h6" />
+      <path d="M9 17h6" />
     </svg>
   ),
   // Org chart icons
   assembly: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <circle cx="12" cy="5" r="3"/>
-      <circle cx="5" cy="19" r="3"/>
-      <circle cx="12" cy="19" r="3"/>
-      <circle cx="19" cy="19" r="3"/>
-      <line x1="12" y1="8" x2="12" y2="16"/>
-      <line x1="12" y1="12" x2="5" y2="16"/>
-      <line x1="12" y1="12" x2="19" y2="16"/>
+      <circle cx="12" cy="5" r="3" />
+      <circle cx="5" cy="19" r="3" />
+      <circle cx="12" cy="19" r="3" />
+      <circle cx="19" cy="19" r="3" />
+      <line x1="12" y1="8" x2="12" y2="16" />
+      <line x1="12" y1="12" x2="5" y2="16" />
+      <line x1="12" y1="12" x2="19" y2="16" />
     </svg>
   ),
   audit: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
-      <rect x="9" y="3" width="6" height="4" rx="1"/>
-      <path d="M9 12l2 2 4-4"/>
+      <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+      <rect x="9" y="3" width="6" height="4" rx="1" />
+      <path d="M9 12l2 2 4-4" />
     </svg>
   ),
   board: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="3" y="3" width="18" height="18" rx="2"/>
-      <path d="M3 9h18"/>
-      <path d="M9 21V9"/>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18" />
+      <path d="M9 21V9" />
     </svg>
   ),
   president: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/>
+      <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z" />
     </svg>
   ),
   vicePresident: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <circle cx="12" cy="8" r="5"/>
-      <path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2"/>
+      <circle cx="12" cy="8" r="5" />
+      <path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2" />
     </svg>
   ),
   director: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-      <circle cx="9" cy="7" r="4"/>
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
     </svg>
   ),
   directorate: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <rect x="2" y="7" width="20" height="14" rx="2"/>
-      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+      <rect x="2" y="7" width="20" height="14" rx="2" />
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
     </svg>
   )
 };
@@ -167,10 +166,6 @@ function Structure() {
       {/* Overview Section with Org Chart */}
       <section className="structure-section" id="overview">
         <div className="container">
-          <div className="section-header-left">
-            <span className="section-tag">2.1</span>
-            <h2>Общая картинка</h2>
-          </div>
 
           <div className="overview-intro">
             <p>
