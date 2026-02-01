@@ -726,6 +726,7 @@
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 60px;
+  align-items: start;
 }
 
 .contact-form-section .section-tag {
@@ -797,6 +798,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin-top: 180px;
 }
 
 .contact-info-card {
@@ -1032,6 +1034,10 @@
 
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-info-section {
+    margin-top: 0;
   }
 
   .news-card {
