@@ -9,6 +9,7 @@ import {
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import './styles.css';
+import resVid from '../../assets/resVid.mp4';
 
 // Icons
 const Icons = {
@@ -61,6 +62,11 @@ const Icons = {
   chevronRight: () => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <polyline points="9,18 15,12 9,6" />
+    </svg>
+  ),
+  chevronDown: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <polyline points="6,9 12,15 18,9" />
     </svg>
   )
 };
@@ -115,8 +121,16 @@ function Design3() {
 
       {/* Hero */}
       <section className="hero">
-        <div className="hero-bg">
-          <div className="hero-pattern"></div>
+        <div className="hero-video-container">
+          <video
+            src={resVid}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="hero-video"
+          />
+          <div className="hero-overlay"></div>
         </div>
         <div className="container">
           <div className="hero-content">
@@ -130,6 +144,9 @@ function Design3() {
               </Link>
             </div>
           </div>
+        </div>
+        <div className="scroll-indicator">
+          {Icons.chevronDown()}
         </div>
       </section>
 
@@ -221,7 +238,11 @@ function Design3() {
                   {...linkProps}
                 >
                   <div className="news-card-image">
-                    <div className="placeholder-news">Новость {item.id}</div>
+                    {item.image ? (
+                      <img src={item.image} alt={item.title} className="news-img" />
+                    ) : (
+                      <div className="placeholder-news">Новость {item.id}</div>
+                    )}
                   </div>
                   <div className="news-card-content">
                     <span className="news-category">{item.category}</span>
