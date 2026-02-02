@@ -10,6 +10,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import './styles.css';
 import resVid from '../../assets/resVid.mp4';
+import seminarImg from '../../assets/seminar10-02-2026.png';
 
 // Icons
 const Icons = {
@@ -80,7 +81,8 @@ const seminars = [
     format: 'Формат семинара: очно и ВКС 10-11 февраля 2026 года',
     externalLink: 'https://семинар-роп2026.рф/#about',
     internalLink: null,
-    year: '2026'
+    year: '2026',
+    image: seminarImg
   },
   {
     id: 2,
@@ -163,11 +165,14 @@ function Design3() {
 
             <div className="about-grid">
               <div className="about-image">
-                <div className="placeholder-about">
-                  <div className="about-badge">
-                    <span className="badge-year">{seminars[currentSeminar].year}</span>
-                    <span className="badge-text">Год проведения</span>
-                  </div>
+                <div className={`about-image-container ${!seminars[currentSeminar].image ? 'placeholder-about' : ''}`}>
+                  {seminars[currentSeminar].image && (
+                    <img
+                      src={seminars[currentSeminar].image}
+                      alt={seminars[currentSeminar].title}
+                      className="seminar-img"
+                    />
+                  )}
                 </div>
               </div>
 
