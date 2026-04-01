@@ -92,6 +92,15 @@ const seminars = [
     externalLink: null,
     internalLink: '/webinar/eco-control-2026',
     year: '2026'
+  },
+  {
+    id: 3,
+    tag: 'вебинар',
+    title: 'Обращение с промышленными отходами',
+    format: 'Формат: ВКС 23 апреля 2026 года',
+    externalLink: null,
+    internalLink: '/webinar/waste-management-2026',
+    year: '2026'
   }
 ];
 

@@ -6,6 +6,7 @@ import Events from './pages/Events';
 import DocumentViewer from './pages/DocumentViewer';
 import NewsDetail from './pages/NewsDetail';
 import WebinarEcoControl2026 from './pages/WebinarDetail';
+import WebinarWaste2026 from './pages/WebinarWaste2026';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/document" element={<DocumentViewer />} />
         <Route path="/news/:id" element={<NewsDetail />} />
         <Route path="/webinar/eco-control-2026" element={<WebinarEcoControl2026 />} />
+        <Route path="/webinar/waste-management-2026" element={<WebinarWaste2026 />} />
         {/* Redirect old seminars path to events */}
         <Route path="/seminars" element={<Events />} />
       </Routes>
