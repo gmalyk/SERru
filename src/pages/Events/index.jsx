@@ -46,13 +46,26 @@ const Icons = {
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <polyline points="20,6 9,17 4,12"/>
     </svg>
+  ),
+  download: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+  ),
+  file: () => (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/>
+      <polyline points="13 2 13 9 20 9"/>
+    </svg>
   )
 };
 
 function Events() {
   const [searchParams, setSearchParams] = useSearchParams();
   const yearFromUrl = searchParams.get('year');
-  const [selectedYear, setSelectedYear] = useState(yearFromUrl || '2025');
+  const [selectedYear, setSelectedYear] = useState(yearFromUrl || '2026');
 
   // Update selected year when URL changes
   useEffect(() => {
@@ -72,7 +85,8 @@ function Events() {
     window.scrollTo(0, 0);
   }, []);
 
-  const currentYearEvents = events[selectedYear] || [];
+  // Reverse to show newest events first
+  const currentYearEvents = (events[selectedYear] || []).slice().reverse();
 
   return (
     <div className="events-page">
@@ -166,12 +180,39 @@ function Events() {
                     </div>
                   )}
 
-                  {event.showBuyButton && (
+                  {event.isPast && event.showBuyButton && (
                     <div className="seminar-actions">
                       <button className="buy-video-btn">
                         {Icons.video()}
                         <span>Купить видеозапись</span>
                       </button>
+                    </div>
+                  )}
+
+                  {!event.isPast && event.documents && event.documents.length > 0 && (
+                    <div className="seminar-documents">
+                      <h4>Документы:</h4>
+                      <div className="documents-grid">
+                        {event.documents.map((doc, idx) => (
+                          <a
+                            key={idx}
+                            href={doc.file}
+                            download={doc.name}
+                            className="document-card"
+                          >
+                            <div className="document-icon">
+                              {Icons.file()}
+                            </div>
+                            <div className="document-info">
+                              <span className="document-name">{doc.name}</span>
+                              <span className="document-action">
+                                {Icons.download()}
+                                Скачать
+                              </span>
+                            </div>
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

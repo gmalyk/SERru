@@ -72,20 +72,28 @@ const Icons = {
   )
 };
 
-// Seminars data for carousel
+// Seminars data for carousel (ordered by date descending — newest first)
 const seminars = [
   {
     id: 1,
-    tag: 'семинар',
-    title: 'ВСЕ ГРАНИ РАСШИРЕННОЙ ОТВЕТСТВЕННОСТИ ПРОИЗВОДИТЕЛЕЙ, ИМПОРТЕРОВ И УТИЛИЗАТОРОВ: ОТ ТЕОРИИ ДО ПРАКТИКИ',
-    format: 'Формат семинара: очно и ВКС 10-11 февраля 2026 года',
-    externalLink: 'https://семинар-роп2026.рф/#about',
-    internalLink: null,
-    year: '2026',
-    image: seminarImg
+    tag: 'вебинар',
+    title: 'Обращение с промышленными отходами',
+    format: 'Формат: ВКС 23 апреля 2026 года',
+    externalLink: null,
+    internalLink: '/webinar/waste-management-2026',
+    year: '2026'
   },
   {
     id: 2,
+    tag: 'вебинар',
+    title: 'Актуализация нормативно-технической базы в части лабораторного и экспертного сопровождения природоохранной деятельности',
+    format: 'Бесплатный вебинар. Формат: ВКС 7 апреля 2026 года',
+    externalLink: null,
+    internalLink: '/webinar/lab-support-2026',
+    year: '2026'
+  },
+  {
+    id: 3,
     tag: 'вебинар',
     title: 'Организация экологического контроля: разработка деклараций НВОС и профессиональных экологических квалификаций',
     format: 'Формат: ВКС 25 февраля 2026 года',
@@ -94,13 +102,14 @@ const seminars = [
     year: '2026'
   },
   {
-    id: 3,
-    tag: 'вебинар',
-    title: 'Обращение с промышленными отходами',
-    format: 'Формат: ВКС 23 апреля 2026 года',
-    externalLink: null,
-    internalLink: '/webinar/waste-management-2026',
-    year: '2026'
+    id: 4,
+    tag: 'семинар',
+    title: 'ВСЕ ГРАНИ РАСШИРЕННОЙ ОТВЕТСТВЕННОСТИ ПРОИЗВОДИТЕЛЕЙ, ИМПОРТЕРОВ И УТИЛИЗАТОРОВ: ОТ ТЕОРИИ ДО ПРАКТИКИ',
+    format: 'Формат семинара: очно и ВКС 10-11 февраля 2026 года',
+    externalLink: 'https://семинар-роп2026.рф/#about',
+    internalLink: null,
+    year: '2026',
+    image: seminarImg
   }
 ];
 

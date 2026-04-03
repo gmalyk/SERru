@@ -7,6 +7,14 @@ import news6 from '../assets/news6.jpg';
 import news7 from '../assets/news7.jpg';
 import news8 from '../assets/news8.jpg';
 
+// Import documents for events
+import doc_invite_0423 from '../assets/Приглашение на вебинар 23 апреля 2026 года.pdf';
+import doc_app_0423 from '../assets/Заявка на участие в вебинаре 23.04.2026.xlsx';
+import doc_contract_0423 from '../assets/Форма договора 23.04.2026.docx';
+import doc_guarantee_0423 from '../assets/Гарантийное письмо 23.04.2026.docx';
+import doc_program_0407 from '../assets/Программа вебинара 07.04.2026.docx';
+import doc_app_0407 from '../assets/Заявка_на_участие_в_вебинаре_07_04_2026.xlsx';
+
 export const organizationInfo = {
   name: 'Союз Экологов России',
   fullName: 'Общероссийское межотраслевое объединение работодателей в сфере экологии и природопользования',
@@ -414,10 +422,27 @@ export const events = {
       ],
       showBuyButton: true,
       isPast: true,
-      internalLink: '/webinar/eco-control-2026'
+      internalLink: '/webinar/eco-control-2026',
+      documents: null
     },
     {
       id: 2,
+      date: '7 апреля 2026 г.',
+      format: 'ВКС',
+      title: 'Актуализация нормативно-технической базы в части лабораторного и экспертного сопровождения природоохранной деятельности',
+      description: 'Доведение и обсуждение требований вновь разработанных методик и планах на 2026 год',
+      topics: null,
+      showBuyButton: false,
+      isPast: false,
+      internalLink: '/webinar/lab-support-2026',
+      isFree: true,
+      documents: [
+        { name: 'Программа вебинара 07.04.2026.docx', file: doc_program_0407 },
+        { name: 'Заявка на участие в вебинаре 07.04.2026.xlsx', file: doc_app_0407 }
+      ]
+    },
+    {
+      id: 3,
       date: '23 апреля 2026 г.',
       format: 'ВКС',
       title: 'Обращение с промышленными отходами',
@@ -437,7 +462,13 @@ export const events = {
       ],
       showBuyButton: true,
       isPast: false,
-      internalLink: '/webinar/waste-management-2026'
+      internalLink: '/webinar/waste-management-2026',
+      documents: [
+        { name: 'Приглашение на вебинар 23 апреля 2026 года.pdf', file: doc_invite_0423 },
+        { name: 'Заявка на участие в вебинаре 23.04.2026.xlsx', file: doc_app_0423 },
+        { name: 'Форма договора 23.04.2026.docx', file: doc_contract_0423 },
+        { name: 'Гарантийное письмо 23.04.2026.docx', file: doc_guarantee_0423 }
+      ]
     }
   ]
 };
