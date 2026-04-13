@@ -5,6 +5,7 @@ import Footer from '../../components/Footer';
 import '../WebinarDetail/styles.css';
 import doc1 from '../../assets/Программа вебинара 07.04.2026.docx';
 import doc2 from '../../assets/Заявка_на_участие_в_вебинаре_07_04_2026.xlsx';
+import webinarPhoto from '../../assets/07.04photo.jpg';
 
 // Icons
 const Icons = {
@@ -98,6 +99,10 @@ function WebinarLabSupport2026() {
             </div>
 
             <h1>{webinarData.title}</h1>
+
+            <div className="webinar-photo">
+              <img src={webinarPhoto} alt={webinarData.title} />
+            </div>
 
             <div className="webinar-speakers">
               <p>{webinarData.subtitle}</p>

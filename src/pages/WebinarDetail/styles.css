@@ -103,6 +103,20 @@
   margin-bottom: 32px;
 }
 
+/* ========== Photo Section ========== */
+.webinar-photo {
+  margin-bottom: 32px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.webinar-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
 /* ========== Speakers Section ========== */
 .webinar-speakers {
   background: linear-gradient(135deg, rgba(76, 175, 80, 0.08) 0%, rgba(76, 175, 80, 0.04) 100%);
