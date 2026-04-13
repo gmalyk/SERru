@@ -11,6 +11,8 @@ import Footer from '../../components/Footer';
 import './styles.css';
 import resVid from '../../assets/resVid.mp4';
 import seminarImg from '../../assets/seminar10-02-2026.png';
+import wasteImg from '../../assets/23-04photo.jpg';
+import labSupportImg from '../../assets/07.04photo.jpg';
 
 // Icons
 const Icons = {
@@ -81,7 +83,8 @@ const seminars = [
     format: 'Формат: ВКС 23 апреля 2026 года',
     externalLink: null,
     internalLink: '/webinar/waste-management-2026',
-    year: '2026'
+    year: '2026',
+    image: wasteImg
   },
   {
     id: 2,
@@ -90,7 +93,8 @@ const seminars = [
     format: 'Бесплатный вебинар. Формат: ВКС 7 апреля 2026 года',
     externalLink: null,
     internalLink: '/webinar/lab-support-2026',
-    year: '2026'
+    year: '2026',
+    image: labSupportImg
   },
   {
     id: 3,
