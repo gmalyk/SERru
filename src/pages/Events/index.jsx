@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import {
-  events
+  events as staticEvents
 } from '../../data/content';
+import { getEvents } from '../../api/events.js';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import './styles.css';
@@ -66,13 +67,23 @@ function Events() {
   const [searchParams, setSearchParams] = useSearchParams();
   const yearFromUrl = searchParams.get('year');
   const [selectedYear, setSelectedYear] = useState(yearFromUrl || '2026');
+  const [dynamicEvents, setDynamicEvents] = useState(null);
+
+  // Fetch events from API
+  useEffect(() => {
+    getEvents()
+      .then(data => setDynamicEvents(data))
+      .catch(() => {}); // fallback to static
+  }, []);
+
+  const events = dynamicEvents || staticEvents;
 
   // Update selected year when URL changes
   useEffect(() => {
     if (yearFromUrl && events[yearFromUrl]) {
       setSelectedYear(yearFromUrl);
     }
-  }, [yearFromUrl]);
+  }, [yearFromUrl, events]);
 
   // Update URL when year changes
   const handleYearChange = (year) => {

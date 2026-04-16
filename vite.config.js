@@ -5,4 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.xlsx', '**/*.docx', '**/*.pdf'],
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000'
+    }
+  }
 })

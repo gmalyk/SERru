@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { news } from '../../data/content';
+import { news as staticNews } from '../../data/content';
+import { getNewsById } from '../../api/news.js';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import './styles.css';
@@ -32,12 +33,32 @@ const Icons = {
 
 function NewsDetail() {
   const { id } = useParams();
-  const newsItem = news.find(item => item.id === parseInt(id));
+  const [dynamicItem, setDynamicItem] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // Scroll to top when page loads
   useEffect(() => {
     window.scrollTo(0, 0);
+    getNewsById(id)
+      .then(data => { setDynamicItem(data); setLoading(false); })
+      .catch(() => setLoading(false));
   }, [id]);
+
+  // Use API data if available, otherwise fall back to static
+  const newsItem = dynamicItem || staticNews.find(item => item.id === parseInt(id));
+
+  if (loading && !newsItem) {
+    return (
+      <div className="news-detail-page">
+        <Navbar />
+        <section className="news-detail-section">
+          <div className="container" style={{ padding: '4rem 1rem', textAlign: 'center', color: '#666' }}>
+            Загрузка...
+          </div>
+        </section>
+        <Footer />
+      </div>
+    );
+  }
 
   // Redirect to home if news item not found
   if (!newsItem) {
@@ -86,10 +107,10 @@ function NewsDetail() {
               ))}
             </div>
 
-            {newsItem.link && (
+            {(newsItem.link || newsItem.external_link) && (
               <div className="news-article-footer">
                 <a
-                  href={newsItem.link}
+                  href={newsItem.link || newsItem.external_link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="telegram-link"

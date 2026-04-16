@@ -28,3 +28,15 @@ Thumbs.db
 
 # Vite
 *.local
+
+# Database
+data.db
+
+# Uploads (user-uploaded files)
+uploads/images/*
+uploads/documents/*
+!uploads/images/.gitkeep
+!uploads/documents/.gitkeep
+
+# Wrangler (Cloudflare local dev)
+.wrangler/

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import {
   organizationInfo,
   contactInfo,
-  news,
+  news as staticNews,
   aboutText
 } from '../../data/content';
 import Navbar from '../../components/Navbar';
@@ -13,6 +13,8 @@ import resVid from '../../assets/resVid.mp4';
 import seminarImg from '../../assets/seminar10-02-2026.png';
 import wasteImg from '../../assets/23-04photo.jpg';
 import labSupportImg from '../../assets/07.04photo.jpg';
+import { getNews } from '../../api/news.js';
+import { getCarouselSeminars } from '../../api/carousel.js';
 
 // Icons
 const Icons = {
@@ -120,7 +122,19 @@ const seminars = [
 function Design3() {
   const [formTopic, setFormTopic] = useState('');
   const [currentSeminar, setCurrentSeminar] = useState(0);
+  const [dynamicNews, setDynamicNews] = useState(null);
+  const [dynamicSeminars, setDynamicSeminars] = useState(null);
   const location = useLocation();
+
+  // Fetch dynamic content from API (falls back to static data on error)
+  useEffect(() => {
+    getNews()
+      .then(data => setDynamicNews(data))
+      .catch(() => {}); // fallback to static
+    getCarouselSeminars()
+      .then(data => setDynamicSeminars(data))
+      .catch(() => {}); // fallback to static
+  }, []);
 
   // Scroll to hash section when navigating from another page
   useEffect(() => {
@@ -135,8 +149,9 @@ function Design3() {
     }
   }, [location]);
 
-  // Show all news items in a scrollable carousel
-  const displayedNews = news;
+  // Use API data if available, otherwise static data
+  const displayedNews = dynamicNews || staticNews;
+  const activeSeminars = dynamicSeminars || seminars;
 
   return (
     <div className="design3">
@@ -180,18 +195,18 @@ function Design3() {
           <div className="about-carousel">
             <button
               className="about-nav-btn about-nav-prev"
-              onClick={() => setCurrentSeminar((prev) => (prev === 0 ? seminars.length - 1 : prev - 1))}
+              onClick={() => setCurrentSeminar((prev) => (prev === 0 ? activeSeminars.length - 1 : prev - 1))}
             >
               {Icons.chevronLeft()}
             </button>
 
             <div className="about-grid">
               <div className="about-image">
-                <div className={`about-image-container ${!seminars[currentSeminar].image ? 'placeholder-about' : ''}`}>
-                  {seminars[currentSeminar].image && (
+                <div className={`about-image-container ${!activeSeminars[currentSeminar].image ? 'placeholder-about' : ''}`}>
+                  {activeSeminars[currentSeminar].image && (
                     <img
-                      src={seminars[currentSeminar].image}
-                      alt={seminars[currentSeminar].title}
+                      src={activeSeminars[currentSeminar].image}
+                      alt={activeSeminars[currentSeminar].title}
                       className="seminar-img"
                     />
                   )}
@@ -199,13 +214,13 @@ function Design3() {
               </div>
 
               <div className="about-content">
-                <span className="section-tag">{seminars[currentSeminar].tag}</span>
-                <h2>{seminars[currentSeminar].title}</h2>
-                <p className="seminar-format">{seminars[currentSeminar].format}</p>
+                <span className="section-tag">{activeSeminars[currentSeminar].tag}</span>
+                <h2>{activeSeminars[currentSeminar].title}</h2>
+                <p className="seminar-format">{activeSeminars[currentSeminar].format}</p>
 
-                {seminars[currentSeminar].externalLink ? (
+                {(activeSeminars[currentSeminar].externalLink || activeSeminars[currentSeminar].external_link) ? (
                   <a
-                    href={seminars[currentSeminar].externalLink}
+                    href={activeSeminars[currentSeminar].externalLink || activeSeminars[currentSeminar].external_link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary"
@@ -213,8 +228,8 @@ function Design3() {
                     <span>Подробнее</span>
                     {Icons.arrowRight()}
                   </a>
-                ) : seminars[currentSeminar].internalLink ? (
-                  <Link to={seminars[currentSeminar].internalLink} className="btn btn-primary">
+                ) : (activeSeminars[currentSeminar].internalLink || activeSeminars[currentSeminar].internal_link) ? (
+                  <Link to={activeSeminars[currentSeminar].internalLink || activeSeminars[currentSeminar].internal_link} className="btn btn-primary">
                     <span>Подробнее</span>
                     {Icons.arrowRight()}
                   </Link>
@@ -229,7 +244,7 @@ function Design3() {
 
             <button
               className="about-nav-btn about-nav-next"
-              onClick={() => setCurrentSeminar((prev) => (prev === seminars.length - 1 ? 0 : prev + 1))}
+              onClick={() => setCurrentSeminar((prev) => (prev === activeSeminars.length - 1 ? 0 : prev + 1))}
             >
               {Icons.chevronRight()}
             </button>
@@ -249,12 +264,13 @@ function Design3() {
             {displayedNews.map((item) => {
               // If item has excerpt, link to detail page; otherwise link to external URL
               const hasDetailPage = item.excerpt && item.excerpt.length > 0;
+              const externalUrl = item.link || item.external_link;
               const linkProps = hasDetailPage
                 ? { to: `/news/${item.id}` }
                 : {
-                  href: item.link || '#',
-                  target: item.link ? '_blank' : undefined,
-                  rel: item.link ? 'noopener noreferrer' : undefined
+                  href: externalUrl || '#',
+                  target: externalUrl ? '_blank' : undefined,
+                  rel: externalUrl ? 'noopener noreferrer' : undefined
                 };
               const LinkComponent = hasDetailPage ? Link : 'a';
 
