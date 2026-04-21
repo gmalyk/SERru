@@ -35,7 +35,7 @@ export function getTokenFromRequest(req) {
 export function setAuthCookie(res, token) {
   res.cookie(COOKIE_NAME, token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: process.env.COOKIE_SECURE !== 'false',
     sameSite: 'strict',
     maxAge: 86400000 // 24h
   });
