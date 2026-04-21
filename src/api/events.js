@@ -25,6 +25,6 @@ export const getEvents = async (year) => {
 };
 
 export const getEvent = (id) => get(`/api/events/${id}`);
-export const createEvent = (data) => post('/api/admin/events', data);
-export const updateEvent = (id, data) => put(`/api/admin/events/${id}`, data);
-export const deleteEvent = (id) => del(`/api/admin/events/${id}`);
+export const createEvent = (data) => post('/api/events', data);
+export const updateEvent = (id, data) => put(`/api/events/${id}`, data);
+export const deleteEvent = (id) => del(`/api/events/${id}`);
