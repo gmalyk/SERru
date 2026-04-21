@@ -53,6 +53,15 @@ function AdminLayout() {
           <NavLink to="/admin/webinars" className={({ isActive }) => isActive ? 'admin-nav-link active' : 'admin-nav-link'}>
             Вебинары
           </NavLink>
+          <NavLink to="/admin/board-members" className={({ isActive }) => isActive ? 'admin-nav-link active' : 'admin-nav-link'}>
+            Состав Правления
+          </NavLink>
+          <NavLink to="/admin/union-members" className={({ isActive }) => isActive ? 'admin-nav-link active' : 'admin-nav-link'}>
+            Члены Союза
+          </NavLink>
+          <NavLink to="/admin/about-documents" className={({ isActive }) => isActive ? 'admin-nav-link active' : 'admin-nav-link'}>
+            Документы (О Союзе)
+          </NavLink>
         </nav>
         <div className="admin-sidebar-footer">
           <span className="admin-user">{email}</span>

@@ -23,6 +23,12 @@ const CarouselForm = lazy(() => import('./pages/Admin/CarouselForm'));
 const WebinarsList = lazy(() => import('./pages/Admin/WebinarsList'));
 const WebinarForm = lazy(() => import('./pages/Admin/WebinarForm'));
 const EventWizard = lazy(() => import('./pages/Admin/EventWizard'));
+const BoardMembersList = lazy(() => import('./pages/Admin/BoardMembersList'));
+const BoardMemberForm = lazy(() => import('./pages/Admin/BoardMemberForm'));
+const UnionMembersList = lazy(() => import('./pages/Admin/UnionMembersList'));
+const UnionMemberForm = lazy(() => import('./pages/Admin/UnionMemberForm'));
+const AboutDocumentsList = lazy(() => import('./pages/Admin/AboutDocumentsList'));
+const AboutDocumentForm = lazy(() => import('./pages/Admin/AboutDocumentForm'));
 
 function App() {
   return (
@@ -64,6 +70,15 @@ function App() {
             <Route path="webinars/new" element={<WebinarForm />} />
             <Route path="webinars/:slug/edit" element={<WebinarForm />} />
             <Route path="event-wizard" element={<EventWizard />} />
+            <Route path="board-members" element={<BoardMembersList />} />
+            <Route path="board-members/new" element={<BoardMemberForm />} />
+            <Route path="board-members/:id/edit" element={<BoardMemberForm />} />
+            <Route path="union-members" element={<UnionMembersList />} />
+            <Route path="union-members/new" element={<UnionMemberForm />} />
+            <Route path="union-members/:id/edit" element={<UnionMemberForm />} />
+            <Route path="about-documents" element={<AboutDocumentsList />} />
+            <Route path="about-documents/new" element={<AboutDocumentForm />} />
+            <Route path="about-documents/:id/edit" element={<AboutDocumentForm />} />
           </Route>
         </Routes>
       </Suspense>

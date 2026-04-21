@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import {
-  organizationInfo,
-  boardMembers,
-  unionMembers
-} from '../../data/content';
+import { organizationInfo } from '../../data/content';
+import { getBoardMembers, getUnionMembers } from '../../api/structure.js';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import './styles.css';
@@ -95,7 +92,14 @@ const Icons = {
 
 function Structure() {
   const [currentSection, setCurrentSection] = useState('overview');
+  const [boardMembers, setBoardMembers] = useState([]);
+  const [unionMembers, setUnionMembers] = useState([]);
   const location = useLocation();
+
+  useEffect(() => {
+    getBoardMembers().then(setBoardMembers).catch(console.error);
+    getUnionMembers().then(setUnionMembers).catch(console.error);
+  }, []);
 
   // Scroll to hash on mount or when hash changes
   useEffect(() => {
@@ -306,10 +310,10 @@ function Structure() {
             <h2>Члены Союза</h2>
           </div>
           <div className="members-list">
-            {unionMembers.map((member) => (
+            {unionMembers.map((member, index) => (
               <div key={member.id} className="member-list-item">
                 <div className="member-list-header">
-                  <span className="member-number">{String(member.id).padStart(2, '0')}</span>
+                  <span className="member-number">{String(index + 1).padStart(2, '0')}</span>
                   <h3>{member.name}</h3>
                 </div>
                 <div className="member-list-details">

@@ -84,7 +84,8 @@ function DocumentViewer() {
   const [pageNumber, setPageNumber] = useState(1);
   const [scale, setScale] = useState(1.2);
 
-  const currentDoc = documentsMap[docId];
+  const currentDoc = documentsMap[docId] ||
+    (docId && docId.includes('/') ? { file: `/api/files/${docId}`, title: '' } : null);
 
   // Disable right-click context menu
   useEffect(() => {

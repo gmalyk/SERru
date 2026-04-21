@@ -473,37 +473,8 @@ export const events = {
   ]
 };
 
-// Board members for Structure page
-export const boardMembers = [
-  {
-    id: 1,
-    name: 'Кондратьева Виктория Ивановна',
-    position: 'Президент ОМОР Союз Экологов России, председатель Правления'
-  },
-  {
-    id: 2,
-    name: 'Прокофьев Сергей Анатольевич',
-    position: 'Вице-президент ОМОР Союз Экологов России, член правления'
-  },
-  {
-    id: 3,
-    name: 'Плямина Ольга Владимировна',
-    position: 'Член правления'
-  },
-  {
-    id: 4,
-    name: 'Винс Константин Петрович',
-    position: 'Член правления'
-  },
-  {
-    id: 5,
-    name: 'Чернышев Владимир Владимирович',
-    position: 'Член правления'
-  }
-];
-
-// Union members for Structure page
-export const unionMembers = [
+// Union members — kept temporarily for reference, removed from exports
+const _unionMembersLegacy = [
   {
     id: 1,
     name: 'ФГБУ «ГосНИИЭНП»',

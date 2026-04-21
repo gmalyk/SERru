@@ -33,28 +33,31 @@ export function initDB() {
     database = getDB();
   }
 
-  // Check if tables already exist
-  const tableExists = database.prepare(
-    "SELECT name FROM sqlite_master WHERE type='table' AND name='news'"
-  ).get();
+  // Ensure schema_migrations tracking table exists
+  database.exec(`
+    CREATE TABLE IF NOT EXISTS schema_migrations (
+      name TEXT PRIMARY KEY,
+      applied_at TEXT DEFAULT (datetime('now'))
+    )
+  `);
 
-  if (!tableExists) {
-    console.log('Initializing database...');
+  // Get list of already-applied migrations
+  const applied = new Set(
+    database.prepare('SELECT name FROM schema_migrations').all().map(r => r.name)
+  );
 
-    // Run schema migration
-    const schema = fs.readFileSync(
-      path.join(__dirname, '..', 'migrations', '0001_initial_schema.sql'),
-      'utf-8'
-    );
-    database.exec(schema);
+  // Find all migration files sorted numerically
+  const migrationsDir = path.join(__dirname, '..', 'migrations');
+  const files = fs.readdirSync(migrationsDir)
+    .filter(f => f.endsWith('.sql'))
+    .sort();
 
-    // Run seed data
-    const seed = fs.readFileSync(
-      path.join(__dirname, '..', 'migrations', '0002_seed_data.sql'),
-      'utf-8'
-    );
-    database.exec(seed);
-
-    console.log('Database initialized with schema and seed data.');
+  for (const file of files) {
+    if (applied.has(file)) continue;
+    console.log(`Applying migration: ${file}`);
+    const sql = fs.readFileSync(path.join(migrationsDir, file), 'utf-8');
+    database.exec(sql);
+    database.prepare('INSERT INTO schema_migrations (name) VALUES (?)').run(file);
+    console.log(`Migration applied: ${file}`);
   }
 }

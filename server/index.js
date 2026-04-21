@@ -9,6 +9,8 @@ import eventsRoutes from './routes/events.js';
 import carouselRoutes from './routes/carousel.js';
 import webinarsRoutes from './routes/webinars.js';
 import uploadRoutes from './routes/upload.js';
+import structureRoutes from './routes/structure.js';
+import aboutRoutes from './routes/about.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -31,6 +33,8 @@ app.use('/api/events', eventsRoutes);
 app.use('/api/carousel-seminars', carouselRoutes);
 app.use('/api/webinars', webinarsRoutes);
 app.use('/api/admin/upload', uploadRoutes);
+app.use('/api/structure', structureRoutes);
+app.use('/api/about', aboutRoutes);
 
 // Serve static frontend (production)
 const distPath = path.join(__dirname, '..', 'dist');

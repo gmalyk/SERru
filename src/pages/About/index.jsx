@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { organizationInfo } from '../../data/content';
+import { getAboutDocuments } from '../../api/about.js';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import './styles.css';
@@ -132,25 +133,18 @@ const authorityObligations = [
   'исполнять иные предусмотренные уставом объединения работодателей обязанности'
 ];
 
-// Documents for read-only viewing
-const readOnlyDocuments = [
-  { id: 'ustav', title: 'Устав ОМОР «Союз Экологов России»', file: 'НОВЫЙ-УСТАВ-СЭР-2025-1.pdf', type: 'PDF' },
-  { id: 'membership', title: 'Положение о членстве в ОМОР «Союз Экологов России»', file: 'polozhenie-o-chlenstve-v-omor-sjer-dlja-sajta-ot-10.10.2023-3.pdf', type: 'PDF' },
-  { id: 'prikaz', title: 'Приказ о вступлении в должность Генерального директора Тюрина В.А.', file: 'prikaz', type: 'PDF' },
-  { id: 'rekvizity', title: 'Карточка ОМОР «Союз Экологов России»', file: 'rekvizity', type: 'PDF' }
-];
-
-// Downloadable documents for joining
-const downloadableDocuments = [
-  { id: 'application', title: 'Заявление о приеме в члены ОМОР СЭР', file: 'zajavlenie-o-prieme-v-chleny-omor-sjer.docx', type: 'DOCX', canDownload: true },
-  { id: 'anketa', title: 'Анкета члена ОМОР СЭР', file: 'anketa-chlena-omor-sjer.docx', type: 'DOCX', canDownload: true },
-  { id: 'perechen', title: 'Перечень документов для вступления в ОМОР', file: 'perechen-dokumentov-dlja-vstuplenija-v-omor.pdf', type: 'PDF', canDownload: false }
-];
 
 function About() {
   const [currentSection, setCurrentSection] = useState('goals');
   const [showRightsDetails, setShowRightsDetails] = useState(false);
+  const [readOnlyDocuments, setReadOnlyDocuments] = useState([]);
+  const [downloadableDocuments, setDownloadableDocuments] = useState([]);
   const location = useLocation();
+
+  useEffect(() => {
+    getAboutDocuments('documents').then(setReadOnlyDocuments).catch(console.error);
+    getAboutDocuments('join').then(setDownloadableDocuments).catch(console.error);
+  }, []);
 
   // Scroll to hash on mount or when hash changes
   useEffect(() => {
@@ -412,7 +406,7 @@ function About() {
             {readOnlyDocuments.map((doc) => (
               <a
                 key={doc.id}
-                href={doc.file === 'prikaz' || doc.file === 'rekvizity' ? `/document?doc=${doc.file}` : `/document?doc=${doc.id}`}
+                href={`/document?doc=${doc.file_key}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="document-card"
@@ -420,7 +414,7 @@ function About() {
                 <div className="document-icon">{Icons.document()}</div>
                 <div className="document-info">
                   <h4>{doc.title}</h4>
-                  <span>{doc.type}</span>
+                  <span>PDF</span>
                 </div>
                 <div className="document-view">
                   {Icons.arrowRight()}
@@ -458,15 +452,15 @@ function About() {
               <h3>Документы для вступления:</h3>
               <div className="join-documents-grid">
                 {downloadableDocuments.map((doc) => (
-                  <div key={doc.id} className={`join-document-card ${doc.canDownload ? 'downloadable' : ''}`}>
+                  <div key={doc.id} className={`join-document-card ${doc.type === 'download' ? 'downloadable' : ''}`}>
                     <div className="document-icon">{Icons.document()}</div>
                     <div className="document-info">
                       <h4>{doc.title}</h4>
-                      <span>{doc.type}</span>
+                      <span>{doc.type === 'download' ? 'DOCX' : 'PDF'}</span>
                     </div>
-                    {doc.canDownload ? (
+                    {doc.type === 'download' ? (
                       <a
-                        href={`/documents/${doc.file}`}
+                        href={`/api/files/${doc.file_key}`}
                         download
                         className="document-download"
                         onClick={(e) => e.stopPropagation()}
@@ -476,7 +470,7 @@ function About() {
                       </a>
                     ) : (
                       <a
-                        href={`/document?doc=${doc.id}`}
+                        href={`/document?doc=${doc.file_key}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="document-view-btn"
