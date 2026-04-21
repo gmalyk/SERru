@@ -40,7 +40,9 @@ function AboutDocumentForm() {
     setUploading(true);
     try {
       const res = await uploadFile(file, 'documents');
-      setForm(f => ({ ...f, file_key: res.key }));
+      const ext = file.name.split('.').pop().toLowerCase();
+      const autoType = ext === 'pdf' ? 'view' : 'download';
+      setForm(f => ({ ...f, file_key: res.key, type: autoType }));
     } catch (err) {
       alert('Ошибка загрузки: ' + err.message);
     } finally {
