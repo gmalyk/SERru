@@ -36,8 +36,8 @@ COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/server ./server
 COPY --from=builder /app/migrations ./migrations
 
-# Prepare upload folders (mount points for volumes)
-RUN mkdir -p /app/uploads/images /app/uploads/documents \
+# Prepare upload folders and db folder (mount points for volumes)
+RUN mkdir -p /app/uploads/images /app/uploads/documents /app/db_vol \
     && chown -R app:app /app
 
 USER app
