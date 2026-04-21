@@ -22,6 +22,7 @@ const CarouselList = lazy(() => import('./pages/Admin/CarouselList'));
 const CarouselForm = lazy(() => import('./pages/Admin/CarouselForm'));
 const WebinarsList = lazy(() => import('./pages/Admin/WebinarsList'));
 const WebinarForm = lazy(() => import('./pages/Admin/WebinarForm'));
+const EventWizard = lazy(() => import('./pages/Admin/EventWizard'));
 
 function App() {
   return (
@@ -62,6 +63,7 @@ function App() {
             <Route path="webinars" element={<WebinarsList />} />
             <Route path="webinars/new" element={<WebinarForm />} />
             <Route path="webinars/:slug/edit" element={<WebinarForm />} />
+            <Route path="event-wizard" element={<EventWizard />} />
           </Route>
         </Routes>
       </Suspense>

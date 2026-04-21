@@ -38,6 +38,9 @@ function AdminLayout() {
           <span className="admin-badge">Админ</span>
         </div>
         <nav className="admin-nav">
+          <NavLink to="/admin/event-wizard" className={({ isActive }) => isActive ? 'admin-nav-link active' : 'admin-nav-link'}>
+            + Добавить мероприятие
+          </NavLink>
           <NavLink to="/admin/news" className={({ isActive }) => isActive ? 'admin-nav-link active' : 'admin-nav-link'}>
             Новости
           </NavLink>
