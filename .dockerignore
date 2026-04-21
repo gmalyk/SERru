@@ -1,0 +1,41 @@
+node_modules
+npm-debug.log*
+dist
+build
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.idea
+.vscode
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+logs
+*.log
+
+# Local database + WAL (will be volume-mounted on VPS)
+data.db
+data.db-shm
+data.db-wal
+
+# User uploads (volume-mounted on VPS)
+uploads/images/*
+uploads/documents/*
+!uploads/images/.gitkeep
+!uploads/documents/.gitkeep
+
+# Claude / tooling
+.claude
+.wrangler
