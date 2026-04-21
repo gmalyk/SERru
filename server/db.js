@@ -41,6 +41,20 @@ export function initDB() {
     )
   `);
 
+  // If news table already exists but schema_migrations is empty,
+  // the DB was initialized before the migration runner — mark 0001 and 0002 as applied
+  const migrationsCount = database.prepare('SELECT COUNT(*) as c FROM schema_migrations').get().c;
+  if (migrationsCount === 0) {
+    const newsExists = database.prepare(
+      "SELECT name FROM sqlite_master WHERE type='table' AND name='news'"
+    ).get();
+    if (newsExists) {
+      database.prepare("INSERT OR IGNORE INTO schema_migrations (name) VALUES (?)").run('0001_initial_schema.sql');
+      database.prepare("INSERT OR IGNORE INTO schema_migrations (name) VALUES (?)").run('0002_seed_data.sql');
+      console.log('Bootstrapped schema_migrations with existing migrations.');
+    }
+  }
+
   // Get list of already-applied migrations
   const applied = new Set(
     database.prepare('SELECT name FROM schema_migrations').all().map(r => r.name)
