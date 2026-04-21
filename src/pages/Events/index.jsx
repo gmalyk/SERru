@@ -191,7 +191,7 @@ function Events() {
                     </div>
                   )}
 
-                  {event.isPast && event.showBuyButton && (
+                  {!!event.isPast && event.showBuyButton && (
                     <div className="seminar-actions">
                       <button className="buy-video-btn">
                         {Icons.video()}
@@ -200,7 +200,7 @@ function Events() {
                     </div>
                   )}
 
-                  {!event.isPast && event.documents && event.documents.length > 0 && (
+                  {!event.isPast && !!event.documents && event.documents.length > 0 && (
                     <div className="seminar-documents">
                       <h4>Документы:</h4>
                       <div className="documents-grid">
