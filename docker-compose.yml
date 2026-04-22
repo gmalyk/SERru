@@ -27,6 +27,12 @@ services:
     depends_on:
       - app
 
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - certbot_www:/var/www/certbot
+      - certbot_conf:/etc/letsencrypt
+
 volumes:
   db_data:
   uploads_data:
