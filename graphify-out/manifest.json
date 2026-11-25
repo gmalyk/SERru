@@ -1,0 +1,578 @@
+{
+  ".claude/settings.local.json": {
+    "mtime": 1776804700.8739655,
+    "seen": 1790519938.5888152,
+    "ast_hash": "d892faac7c40df86d7556ec61dcfb1c1",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1776366550.7462084,
+    "seen": 1790519938.588817,
+    "ast_hash": "f80fdbfdc9867eb41b3014e6ca9cc347",
+    "semantic_hash": ""
+  },
+  "postcss.config.js": {
+    "mtime": 1768914986.6137724,
+    "seen": 1790519938.5888178,
+    "ast_hash": "6b5c4cb81230b2fed05f0216b775c0f5",
+    "semantic_hash": ""
+  },
+  "server/auth.js": {
+    "mtime": 1776773652.550616,
+    "seen": 1790519938.588819,
+    "ast_hash": "bf78df5f4e03ebf7baac0e4ad8eca02b",
+    "semantic_hash": ""
+  },
+  "server/create-admin.js": {
+    "mtime": 1776366541.8928134,
+    "seen": 1790519938.58882,
+    "ast_hash": "8e560171bb8af89d090a033077e084cf",
+    "semantic_hash": ""
+  },
+  "server/db.js": {
+    "mtime": 1776803230.3305864,
+    "seen": 1790519938.588821,
+    "ast_hash": "d7b1c3995b7e7c58edea522a0ca277ba",
+    "semantic_hash": ""
+  },
+  "server/index.js": {
+    "mtime": 1776798502.4065793,
+    "seen": 1790519938.5888221,
+    "ast_hash": "d2ac2bbdb133a156a6a0bab08967d668",
+    "semantic_hash": ""
+  },
+  "server/routes/about.js": {
+    "mtime": 1776798487.758102,
+    "seen": 1790519938.588829,
+    "ast_hash": "44d7fb2cf4683723fedf60bc35d7022b",
+    "semantic_hash": ""
+  },
+  "server/routes/auth.js": {
+    "mtime": 1776366486.589514,
+    "seen": 1790519938.58883,
+    "ast_hash": "3dceb56b0b4a9ce9ad75ef4271fea97a",
+    "semantic_hash": ""
+  },
+  "server/routes/carousel.js": {
+    "mtime": 1776366517.6792455,
+    "seen": 1790519938.588831,
+    "ast_hash": "726efc34e266e088861b5c03f02cf008",
+    "semantic_hash": ""
+  },
+  "server/routes/events.js": {
+    "mtime": 1776366507.5008204,
+    "seen": 1790519938.588832,
+    "ast_hash": "ab5c1fb8bcdb20ff706c84672c4cc9cd",
+    "semantic_hash": ""
+  },
+  "server/routes/news.js": {
+    "mtime": 1776366493.706676,
+    "seen": 1790519938.588832,
+    "ast_hash": "05ca1544afe78ab142867e8b1fe2a489",
+    "semantic_hash": ""
+  },
+  "server/routes/structure.js": {
+    "mtime": 1776798481.17542,
+    "seen": 1790519938.588833,
+    "ast_hash": "12a625933af2d88d5005d2d87e2f543c",
+    "semantic_hash": ""
+  },
+  "server/routes/upload.js": {
+    "mtime": 1776366534.9294484,
+    "seen": 1790519938.588834,
+    "ast_hash": "4fd7e6ad4df330a49e7046972e089b2c",
+    "semantic_hash": ""
+  },
+  "server/routes/webinars.js": {
+    "mtime": 1776366531.0859706,
+    "seen": 1790519938.588834,
+    "ast_hash": "526fbf642dde935c011ba3d4fb4e7e05",
+    "semantic_hash": ""
+  },
+  "src/App.jsx": {
+    "mtime": 1776798591.7501705,
+    "seen": 1790519938.588835,
+    "ast_hash": "85e77b44b1b0af4a79b66c6c8d5cc207",
+    "semantic_hash": ""
+  },
+  "src/api/about.js": {
+    "mtime": 1776798512.561715,
+    "seen": 1790519938.5888362,
+    "ast_hash": "8feb5ac1c157b9cc6caf33d785c08098",
+    "semantic_hash": ""
+  },
+  "src/api/auth.js": {
+    "mtime": 1776365394.4277534,
+    "seen": 1790519938.5888362,
+    "ast_hash": "903e71467d7660c1cc28f28770610a65",
+    "semantic_hash": ""
+  },
+  "src/api/carousel.js": {
+    "mtime": 1776774387.375107,
+    "seen": 1790519938.5888371,
+    "ast_hash": "29212907ca01ae5c94645c0572b69ef4",
+    "semantic_hash": ""
+  },
+  "src/api/client.js": {
+    "mtime": 1776365386.4235678,
+    "seen": 1790519938.5888371,
+    "ast_hash": "e7d9c35fcf79a3d83793b319b771cf67",
+    "semantic_hash": ""
+  },
+  "src/api/events.js": {
+    "mtime": 1776774384.9904053,
+    "seen": 1790519938.5888379,
+    "ast_hash": "50f8d258edbad68ef7899bf06f79ef62",
+    "semantic_hash": ""
+  },
+  "src/api/news.js": {
+    "mtime": 1776774383.9329088,
+    "seen": 1790519938.5888388,
+    "ast_hash": "1728aff117ad43e1a21b50c9b35caca6",
+    "semantic_hash": ""
+  },
+  "src/api/structure.js": {
+    "mtime": 1776798508.8843722,
+    "seen": 1790519938.58884,
+    "ast_hash": "0c8a7ccd66cf62abe02c38d5f0199dab",
+    "semantic_hash": ""
+  },
+  "src/api/upload.js": {
+    "mtime": 1776794973.4278235,
+    "seen": 1790519938.58884,
+    "ast_hash": "8acf0f1ec17b039b30d212a118272718",
+    "semantic_hash": ""
+  },
+  "src/api/webinars.js": {
+    "mtime": 1776774388.99166,
+    "seen": 1790519938.588841,
+    "ast_hash": "cf947ad24a255ebf7c5081bd1c74a4a3",
+    "semantic_hash": ""
+  },
+  "src/components/Footer/index.jsx": {
+    "mtime": 1769981629.3967278,
+    "seen": 1790519938.588842,
+    "ast_hash": "484d028ec2a4c2a3b0e7c744e298f5dc",
+    "semantic_hash": ""
+  },
+  "src/components/Navbar/index.jsx": {
+    "mtime": 1769613627.1522286,
+    "seen": 1790519938.588842,
+    "ast_hash": "91bbb971462ab16ad9073f0fa8a2cf2f",
+    "semantic_hash": ""
+  },
+  "src/data/content.js": {
+    "mtime": 1776798668.6780097,
+    "seen": 1790519938.588843,
+    "ast_hash": "c88e3e2e5b0d6659eba3b767b3635a5a",
+    "semantic_hash": ""
+  },
+  "src/designs/Design1/index.jsx": {
+    "mtime": 1768834429.2428296,
+    "seen": 1790519938.588843,
+    "ast_hash": "988572bc63957fd19b0f94a08eda39d8",
+    "semantic_hash": ""
+  },
+  "src/designs/Design2/index.jsx": {
+    "mtime": 1768913254.978702,
+    "seen": 1790519938.588844,
+    "ast_hash": "4cdeddac59148c5910284d8a5e966836",
+    "semantic_hash": ""
+  },
+  "src/designs/Design3/index.jsx": {
+    "mtime": 1776365659.2928948,
+    "seen": 1790519938.588845,
+    "ast_hash": "7500f2cbfeaa6d40f5b2c87696e7ba25",
+    "semantic_hash": ""
+  },
+  "src/designs/Design4/index.jsx": {
+    "mtime": 1768837941.0295415,
+    "seen": 1790519938.588845,
+    "ast_hash": "72de86a2cf322efc5d335326b7fe7a83",
+    "semantic_hash": ""
+  },
+  "src/main.jsx": {
+    "mtime": 1768834313.235728,
+    "seen": 1790519938.588846,
+    "ast_hash": "e13723e2574429d9a6d849727e3ff695",
+    "semantic_hash": ""
+  },
+  "src/pages/About/index.jsx": {
+    "mtime": 1776798652.4878578,
+    "seen": 1790519938.588846,
+    "ast_hash": "d6197e7b6c3bf6380b5b5c67330ecfe0",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/AboutDocumentForm.jsx": {
+    "mtime": 1776804209.5211294,
+    "seen": 1790519938.5888472,
+    "ast_hash": "3d7e7dd2f38eb2bf96a00a926052975e",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/AboutDocumentsList.jsx": {
+    "mtime": 1776798559.8398836,
+    "seen": 1790519938.588848,
+    "ast_hash": "65fccb8a5dd37c578e9f4a347cbc2ab8",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/BoardMemberForm.jsx": {
+    "mtime": 1776798531.9631538,
+    "seen": 1790519938.588848,
+    "ast_hash": "4f6efb930d3772f53dd06fd1d473025b",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/BoardMembersList.jsx": {
+    "mtime": 1776798522.0791578,
+    "seen": 1790519938.5888488,
+    "ast_hash": "a9a0766f552a4a59e19cfcb6e3410199",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/CarouselForm.jsx": {
+    "mtime": 1776365493.683751,
+    "seen": 1790519938.58885,
+    "ast_hash": "4df1c5f53d01f466b18fd69297f23a98",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/CarouselList.jsx": {
+    "mtime": 1776365479.2134938,
+    "seen": 1790519938.58885,
+    "ast_hash": "33addf5cca0fe8752eb1ddf6056798fb",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/EventForm.jsx": {
+    "mtime": 1776365467.8901832,
+    "seen": 1790519938.588851,
+    "ast_hash": "50cd2c01b73aac7f7abaf1736c7fda34",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/EventWizard.jsx": {
+    "mtime": 1776776463.066875,
+    "seen": 1790519938.588851,
+    "ast_hash": "7d08ec931838cea4a6a2a98e904a89af",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/EventsList.jsx": {
+    "mtime": 1776365448.8243215,
+    "seen": 1790519938.588852,
+    "ast_hash": "10b096e14a47b7f184ff8fe562b35500",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/Login.jsx": {
+    "mtime": 1776365409.173603,
+    "seen": 1790519938.588853,
+    "ast_hash": "73a108d89f9850d7a02538431723ae0a",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/NewsForm.jsx": {
+    "mtime": 1776365439.1129363,
+    "seen": 1790519938.588854,
+    "ast_hash": "621b8829b7f5ffb7d0ec82d8943f9dd1",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/NewsList.jsx": {
+    "mtime": 1776365425.0190196,
+    "seen": 1790519938.588854,
+    "ast_hash": "84410051a3433b8fe36f1fefaf989f00",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/UnionMemberForm.jsx": {
+    "mtime": 1776798549.4029293,
+    "seen": 1790519938.588855,
+    "ast_hash": "80521f718331cf0cde2783acbec38970",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/UnionMembersList.jsx": {
+    "mtime": 1776798539.1929975,
+    "seen": 1790519938.588855,
+    "ast_hash": "9b0fc1b7b7e89179711c3e610959cad7",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/WebinarForm.jsx": {
+    "mtime": 1776365522.451014,
+    "seen": 1790519938.588856,
+    "ast_hash": "8226bb3ac5d36381d45814a2ba4d2281",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/WebinarsList.jsx": {
+    "mtime": 1776365503.527085,
+    "seen": 1790519938.5888572,
+    "ast_hash": "c255387d4ecac314b62ca3ab4c9b83c7",
+    "semantic_hash": ""
+  },
+  "src/pages/Admin/index.jsx": {
+    "mtime": 1776798596.970439,
+    "seen": 1790519938.5888572,
+    "ast_hash": "e1e1403307cf154471e1d9125252a87a",
+    "semantic_hash": ""
+  },
+  "src/pages/DocumentViewer/index.jsx": {
+    "mtime": 1776798601.319861,
+    "seen": 1790519938.5888581,
+    "ast_hash": "aedb72f739f566945c35f50f0738e853",
+    "semantic_hash": ""
+  },
+  "src/pages/Events/index.jsx": {
+    "mtime": 1776794727.2883544,
+    "seen": 1790519938.5888581,
+    "ast_hash": "3c8a74c3310d8959016d97ecb9b8ad0a",
+    "semantic_hash": ""
+  },
+  "src/pages/NewsDetail/index.jsx": {
+    "mtime": 1776365727.5829036,
+    "seen": 1790519938.5888588,
+    "ast_hash": "576be8b50e2418588bc9910e4a69bf96",
+    "semantic_hash": ""
+  },
+  "src/pages/Seminars/index.jsx": {
+    "mtime": 1769451409.6352098,
+    "seen": 1790519938.5888598,
+    "ast_hash": "077841a478e8b873d6ff03fcf6cd369a",
+    "semantic_hash": ""
+  },
+  "src/pages/Structure/index.jsx": {
+    "mtime": 1776798613.1704438,
+    "seen": 1790519938.5888598,
+    "ast_hash": "3b3fa45f760a257102c1f679c9292b73",
+    "semantic_hash": ""
+  },
+  "src/pages/WebinarDetail/index.jsx": {
+    "mtime": 1775045443.8520725,
+    "seen": 1790519938.588861,
+    "ast_hash": "39ba9ac3026e04877225163aad9654c0",
+    "semantic_hash": ""
+  },
+  "src/pages/WebinarDynamic/index.jsx": {
+    "mtime": 1776365596.258765,
+    "seen": 1790519938.588862,
+    "ast_hash": "96ba15c8efcad1a367729baa05da4829",
+    "semantic_hash": ""
+  },
+  "src/pages/WebinarLabSupport2026/index.jsx": {
+    "mtime": 1776085282.998501,
+    "seen": 1790519938.588862,
+    "ast_hash": "5e5c900e0e902c261ecdab29bbb71c9c",
+    "semantic_hash": ""
+  },
+  "src/pages/WebinarWaste2026/index.jsx": {
+    "mtime": 1776085281.9097607,
+    "seen": 1790519938.588863,
+    "ast_hash": "9416b5dd3d3a79b2ca9dd95e47129113",
+    "semantic_hash": ""
+  },
+  "tailwind.config.js": {
+    "mtime": 1768914587.5407639,
+    "seen": 1790519938.588864,
+    "ast_hash": "084d17eea497f3fee1fde0a91564a92a",
+    "semantic_hash": ""
+  },
+  "vite.config.js": {
+    "mtime": 1776366561.435261,
+    "seen": 1790519938.588864,
+    "ast_hash": "8fa136030c845bf70d46e91267abe2d6",
+    "semantic_hash": ""
+  },
+  "docker-compose.yml": {
+    "mtime": 1776840932.1438737,
+    "seen": 1790519938.588865,
+    "ast_hash": "c05795da10f3805606b04ce471dd91d1",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1775048573.8374953,
+    "seen": 1790519938.588866,
+    "ast_hash": "4d790d3efa653fbcb2753332bdaa4b4e",
+    "semantic_hash": ""
+  },
+  "src/assets/dco3sem.pdf": {
+    "mtime": 1769116949.6175668,
+    "seen": 1790519938.588866,
+    "ast_hash": "04de9977834eae32495e71bfe90c375a",
+    "semantic_hash": ""
+  },
+  "src/assets/doc2Sem.pdf": {
+    "mtime": 1769116942.4417393,
+    "seen": 1790519938.5888672,
+    "ast_hash": "0193ebe5da66dbac4d481a5d6a37f512",
+    "semantic_hash": ""
+  },
+  "src/assets/\u041f\u0440\u0438\u0433\u043b\u0430\u0448\u0435\u043d\u0438\u0435 \u043d\u0430 \u0432\u0435\u0431\u0438\u043d\u0430\u0440 23 \u0430\u043f\u0440\u0435\u043b\u044f 2026 \u0433\u043e\u0434\u0430.pdf": {
+    "mtime": 1775043894.7959166,
+    "seen": 1790519938.5888681,
+    "ast_hash": "aef48f29204681872b722121e79a2785",
+    "semantic_hash": ""
+  },
+  "src/assets/\u041f\u0440\u0438\u043a\u0430\u0437_\u043e_\u0432\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u0438_\u0432_\u0434\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c_\u0422\u044e\u0440\u0438\u043d_\u0412_\u0410_.pdf": {
+    "mtime": 1770023743.2295763,
+    "seen": 1790519938.588869,
+    "ast_hash": "0193ebe5da66dbac4d481a5d6a37f512",
+    "semantic_hash": ""
+  },
+  "src/assets/\u0420\u0435\u043a\u0432\u0438\u0437\u0438\u0442\u044b \u041e\u041c\u041e\u0420 \u0421\u042d\u0420.pdf": {
+    "mtime": 1770023768.8836727,
+    "seen": 1790519938.588869,
+    "ast_hash": "bb789376e358018fdcbf62b2483b1bc3",
+    "semantic_hash": ""
+  },
+  "public/logo.png": {
+    "mtime": 1775048550.0054522,
+    "seen": 1790519938.5888698,
+    "ast_hash": "f8da52ca963282253677a6724e8c491b",
+    "semantic_hash": ""
+  },
+  "src/assets/07.04photo.jpg": {
+    "mtime": 1776084404.537117,
+    "seen": 1790519938.588871,
+    "ast_hash": "7dfe14e4a36f31ab87ba0ca7ff827f8c",
+    "semantic_hash": ""
+  },
+  "src/assets/23-04photo.jpg": {
+    "mtime": 1776084398.4608872,
+    "seen": 1790519938.588871,
+    "ast_hash": "f814b84b130f3acd720e5ddab8effb3b",
+    "semantic_hash": ""
+  },
+  "src/assets/logo.png": {
+    "mtime": 1768834376.898173,
+    "seen": 1790519938.588872,
+    "ast_hash": "f8da52ca963282253677a6724e8c491b",
+    "semantic_hash": ""
+  },
+  "src/assets/news3.jpg": {
+    "mtime": 1769980855.5205905,
+    "seen": 1790519938.588872,
+    "ast_hash": "f3057c0f76aaee35b39a9e34e3247dd5",
+    "semantic_hash": ""
+  },
+  "src/assets/news5.jpg": {
+    "mtime": 1769980855.5391734,
+    "seen": 1790519938.588873,
+    "ast_hash": "e44b1a3becd4507edeb75c9a85b7db5e",
+    "semantic_hash": ""
+  },
+  "src/assets/news6.jpg": {
+    "mtime": 1769980855.5465584,
+    "seen": 1790519938.588874,
+    "ast_hash": "a8b9deae4765d3fb7fb0eb1901889d9d",
+    "semantic_hash": ""
+  },
+  "src/assets/news7.jpg": {
+    "mtime": 1769980855.5544958,
+    "seen": 1790519938.588874,
+    "ast_hash": "441d51914a254e31b04c5740283210c3",
+    "semantic_hash": ""
+  },
+  "src/assets/news8.jpg": {
+    "mtime": 1769980855.5635061,
+    "seen": 1790519938.588875,
+    "ast_hash": "658a5f2f31c28c348a8289433f207e57",
+    "semantic_hash": ""
+  },
+  "src/assets/partner1-removebg-preview.png": {
+    "mtime": 1769981576.1517422,
+    "seen": 1790519938.588876,
+    "ast_hash": "69919b622156dd71899fa1770406f256",
+    "semantic_hash": ""
+  },
+  "src/assets/partner1.jpeg": {
+    "mtime": 1769981022.863493,
+    "seen": 1790519938.588876,
+    "ast_hash": "5857102cbba0bf65e063633c7cda5208",
+    "semantic_hash": ""
+  },
+  "src/assets/partner2-removebg-preview.png": {
+    "mtime": 1769981555.8751376,
+    "seen": 1790519938.588877,
+    "ast_hash": "488580cbbdd2bb83ac3747cebbdcba0f",
+    "semantic_hash": ""
+  },
+  "src/assets/partner2.jpg": {
+    "mtime": 1769981022.8847668,
+    "seen": 1790519938.5888782,
+    "ast_hash": "e22441a3fdeab893ef8d6bccc5b6fff6",
+    "semantic_hash": ""
+  },
+  "src/assets/partner3-removebg-preview.png": {
+    "mtime": 1769981538.0721672,
+    "seen": 1790519938.5888782,
+    "ast_hash": "fd71aad26476c311e017b2183367a3f7",
+    "semantic_hash": ""
+  },
+  "src/assets/partner3.jpg": {
+    "mtime": 1769981022.9129336,
+    "seen": 1790519938.588879,
+    "ast_hash": "3b5b98e77973c39af6128d55f5a1f609",
+    "semantic_hash": ""
+  },
+  "src/assets/russianwildlife.jpg": {
+    "mtime": 1768948598.4202523,
+    "seen": 1790519938.5888798,
+    "ast_hash": "817296e0858da0ace8e00adaaf893e91",
+    "semantic_hash": ""
+  },
+  "src/assets/seminar10-02-2026.png": {
+    "mtime": 1770023101.5383642,
+    "seen": 1790519938.5888808,
+    "ast_hash": "5cc80d9108b15e0640399d94b1530c13",
+    "semantic_hash": ""
+  },
+  "src/assets/webinar04-11-2024.jpg": {
+    "mtime": 1769980866.2636788,
+    "seen": 1790519938.588882,
+    "ast_hash": "df8152ef403c067734f0d9735fc3c746",
+    "semantic_hash": ""
+  },
+  "src/assets/webinar09-10-2024.jpg": {
+    "mtime": 1769980866.284514,
+    "seen": 1790519938.588882,
+    "ast_hash": "fb8e78f3bc92c00452cef18e5d05cad1",
+    "semantic_hash": ""
+  },
+  "src/assets/webinar09-10-2025.jpg": {
+    "mtime": 1769980866.2978268,
+    "seen": 1790519938.588883,
+    "ast_hash": "f872a852595b59f6e7c9e867f4f37bd1",
+    "semantic_hash": ""
+  },
+  "src/assets/webinar11-04-2025.jpg": {
+    "mtime": 1769980866.3203943,
+    "seen": 1790519938.5888839,
+    "ast_hash": "09c1532ccb1a8c99c8410fcf42fbf9b3",
+    "semantic_hash": ""
+  },
+  "src/assets/webinar13-03-2025.jpg": {
+    "mtime": 1769980866.3249705,
+    "seen": 1790519938.5888839,
+    "ast_hash": "3aab0a1f277d11bf80e2d323671819ec",
+    "semantic_hash": ""
+  },
+  "src/assets/webinar25-06-2025.jpg": {
+    "mtime": 1769980866.337411,
+    "seen": 1790519938.588885,
+    "ast_hash": "c9a90534ac297da4b1215cd0db1285dc",
+    "semantic_hash": ""
+  },
+  "src/assets/webinar25-11-2025.jpg": {
+    "mtime": 1769980866.34368,
+    "seen": 1790519938.588885,
+    "ast_hash": "502d1f0eda461da275f8c4cd1dfc82b2",
+    "semantic_hash": ""
+  },
+  "src/assets/webinar29-05-2025.jpg": {
+    "mtime": 1769980866.3762422,
+    "seen": 1790519938.588886,
+    "ast_hash": "66e6b70b8cf9eaf6f0379c4ea41ab752",
+    "semantic_hash": ""
+  },
+  "src/assets/webinar29-05-2025_2.jpg": {
+    "mtime": 1769980866.3614588,
+    "seen": 1790519938.588887,
+    "ast_hash": "b1dcb5ca585c4e35db9f2e8fed000122",
+    "semantic_hash": ""
+  },
+  "src/assets/resVid.mp4": {
+    "mtime": 1769981699.5336924,
+    "seen": 1790519938.588887,
+    "ast_hash": "f92476e25925b31d7639fa294eef0caf",
+    "semantic_hash": ""
+  }
+}
